@@ -37,6 +37,10 @@ const StyledTopPageGraphicsContainer = styled.div`
     .image-style-container{
         position:relative;
         
+        .product-image{
+            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.14);
+            height:650px;
+        }
         
        
 

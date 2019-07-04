@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {tieme} from "./images/search.png";
-import {talweg} from "./images/talweg_portfolio.png";
+
 import {ImageStylingContainer} from "./ImageStylingContainer";
 
 export class ProductCarousel extends Component{
@@ -10,7 +9,7 @@ export class ProductCarousel extends Component{
 
         this.state = {
             currentPage:0,
-            imageArray:["search","talweg_portfolio","flocks_portfolio"]
+            imageArray:["tieme_light","talweg_light","flocks_light","new_tieme_mark"]
         }
 
     }
@@ -53,7 +52,7 @@ export class ProductCarousel extends Component{
                     />)}
 
                 
-                
+            
             </StyledProductCarousel>
 
         )
@@ -70,7 +69,14 @@ const StyledProductCarousel = styled.div`
         margin-bottom:20px;
     }
   
-    
+    .feature{
+            text-align:left;
+            width:100%;
+            font-size:3rem;
+            line-height: 4rem;
+
+
+        }
 
 
 `

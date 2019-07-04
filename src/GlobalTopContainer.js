@@ -10,13 +10,23 @@ export const GlobalTopContainer = () => {
                 <h2 className="portfolio-sub-name">FULL STACK ENGINEER</h2>
                 <h1 className="portfolio-name">Dustin Bailey</h1>
                
-                <p className="longer-bio">A full stack engineer with immense appreciation for beautifully designed products.
+                <p className="longer-bio">A developer with immense appreciation for beautiful design throughout the technical stack.
                 Dustin is currently a student a Lambda School.
                 
                 </p>
             </div>
-            <h1 className="front-end-project-title">Front End</h1>
+            <div className="front-end-description-container">
+                <h1 className="front-end-project title">Professional products<br></br> and personal projects.</h1>
+                <div className="front-end-project text">Most written in <strong>React</strong> with <strong>Redux </strong>for state management. Backend powered by Java's <strong>spring framework</strong> with <strong>PostgreSQL</strong> for data persistence.</div>
+                
+            </div>
+           
+
+                
+            
+           
             <ProductCarousel/>
+           
             
    
 
@@ -36,7 +46,7 @@ const StyledGlobalTopContainer = styled.section`
     .content-container{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding:0px 0px 100px;
     }
     .portfolio-name{
@@ -50,8 +60,9 @@ const StyledGlobalTopContainer = styled.section`
     .portfolio-sub-name{
         font-family:${theme.experimentalFont};
        font-size: 1.6rem;
-       letter-spacing:2px;
+       letter-spacing:3px;
        color:#00000073;
+       padding: 5px;
        
     }
 
@@ -60,15 +71,56 @@ const StyledGlobalTopContainer = styled.section`
         ${theme.globalTextFont};
         color: #000000a6;
         text-align: left;
-        width:474px;
+        width:500px;
         line-height: 3rem;
+        text-align:center;
+
+        
     }
 
     .front-end-project-title{
             margin:20px 0px;
+            padding-bottom:10px;
             text-align:left;
             font-family:${theme.largeFont};
+            border-bottom:1px solid lightgray;
+            font-size: 4.2rem;
+            
+
+        .secondary-heading{
+            font-family:${theme.experimentalFont};
+            color:#00000073;
+            font-size: 1.5rem;
+            
+            font-weight: 800;
+        }
+
+        
     }
+    .front-end-description-container{
+            display:flex;
+            width:100%;
+            justify-content:space-between;
+
+            .front-end-project{
+                display:inline-block;
+            }
+
+            .title{
+                font-size: 5rem;
+
+}
+            }
+            .text{
+                font-size: 2.5rem;
+                color: #000000c2;
+                
+
+                text-align: left;
+
+                width: 500px;
+            }
+        }
 
 
 
