@@ -30,16 +30,18 @@ export class ImageStylingContainer extends Component{
 const StyledTopPageGraphicsContainer = styled.div`
     
     width:100%;
-    
+    position: relative;
+    left:51px;
 
     
 
     .image-style-container{
-        position:relative;
+        
         
         .product-image{
-            box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.14);
-            height:650px;
+            box-shadow: -12px 11px 27px 0px rgba(0,0,0,0.3);
+            width: 1000px;
+            border-radius: 4px;
         }
         
        

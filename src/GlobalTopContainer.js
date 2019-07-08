@@ -6,26 +6,38 @@ import {ProductCarousel} from "./ProductCarousel";
 export const GlobalTopContainer = () => {
     return(
         <StyledGlobalTopContainer>
-            <div className="content-container">
-                <h2 className="portfolio-sub-name">FULL STACK ENGINEER</h2>
-                <h1 className="portfolio-name">Dustin Bailey</h1>
-               
-                <p className="longer-bio">A developer with immense appreciation for beautiful design throughout the technical stack.
-                Dustin is currently a student a Lambda School.
-                
-                </p>
+            <div className="parallax__layer parallax__layer--base">
+                <div className="scroll-content-container">
+                    <h2 className="portfolio-sub-name">FULL STACK ENGINEER</h2>
+                    <h1 className="portfolio-name">Dustin Bailey</h1>
+                                    
+                    <p className="longer-bio">A developer with immense appreciation for beautiful design throughout the technical stack.
+                        Dustin is currently a student a Lambda School.
+                                        
+                    </p>
+                </div>
             </div>
-            <div className="front-end-description-container">
-                <h1 className="front-end-project title">Professional products<br></br> and personal projects.</h1>
-                <div className="front-end-project text">Most written in <strong>React</strong> with <strong>Redux </strong>for state management. Backend powered by Java's <strong>spring framework</strong> with <strong>PostgreSQL</strong> for data persistence.</div>
+           <div className="parallax__layer parallax__layer--back">
                 
+                <div className="content-container">
+                    
+                    <ProductCarousel/>
+                </div>
             </div>
+            <div className="parallax__layer parallax__layer--base">
+                <div className="front-end-description-container">
+                    <h1 className="front-end-project title">Professional products<br></br> and personal projects.</h1>
+                    <div className="front-end-project text">Most written in <strong>React</strong> with <strong>Redux </strong>for state management. Backend powered by Java's <strong>spring framework</strong> with <strong>PostgreSQL</strong> for data persistence.</div>
+                    
+                </div>
+            </div>
+            
            
 
                 
             
            
-            <ProductCarousel/>
+            
            
             
    
@@ -38,22 +50,73 @@ export const GlobalTopContainer = () => {
 
 const StyledGlobalTopContainer = styled.section`
 
-    display:flex;
+    ${'' /* display:flex;
     flex-direction:column;
     justify-content:space-between;
-    padding:100px;
+    padding: 50px; */}
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    position: absolute;
+    overflow-x: auto;
+    overflow-y: hidden;
+    perspective: 300px;
+    scroll-behavior: smooth;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    ${'' /* perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; */}
+
+    .parallax__layer {
+    ${'' /* position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 100vh 0; */}
+    ${'' /* transform-style: preserve-3d; */}
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    margin-right: -.3em
+    }
+    .parallax__layer--base {
+    transform: translateZ(0);
+    display: inline-block;
+    white-space: normal;
+    }
+    .parallax__layer--back {
+        transform: translateZ(60px) scale(.8);
+        transform-origin: 10% 50%;
+        display: inline-block;
+        white-space: normal;
+
+    }
 
     .content-container{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        padding:0px 0px 100px;
+        padding: 0px 0px 100px 100px;
+    }
+
+    .scroll-content-container{
+        transform: translateZ(60px) scale(.8);
+        height:100%;
+        width:100%;
     }
     .portfolio-name{
         font-family:${theme.largeFont};
-        font-size:8rem;
-        
+        font-size: 6rem;
+
         margin: 0px 0px 20px;
+
+        text-align: left;
         
     }
 
@@ -63,6 +126,9 @@ const StyledGlobalTopContainer = styled.section`
        letter-spacing:3px;
        color:#00000073;
        padding: 5px;
+       text-align: left;
+
+}
        
     }
 
@@ -71,9 +137,9 @@ const StyledGlobalTopContainer = styled.section`
         ${theme.globalTextFont};
         color: #000000a6;
         text-align: left;
-        width:500px;
+        width: 405px;
         line-height: 3rem;
-        text-align:center;
+        text-align:left;
 
         
     }
@@ -101,6 +167,7 @@ const StyledGlobalTopContainer = styled.section`
             display:flex;
             width:100%;
             justify-content:space-between;
+            
 
             .front-end-project{
                 display:inline-block;
