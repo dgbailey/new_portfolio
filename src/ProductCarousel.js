@@ -60,12 +60,21 @@ export class ProductCarousel extends Component{
 
 }
 
+const custom_theme = {
+    width: "146vh"
+  }
+
+const theme = {
+    origin:"transform-origin: 30% 50%",
+    zScaling:"transform: translateZ(60px) scale(.8)"
+}
+
 const StyledProductCarousel = styled.div`
     display:flex;
     flex-direction:column;
     align-items:flex-end;
-    transform: translateZ(60px) scale(.8);
-    transform-origin: 100% 50%;
+    transform: ${props => props.theme.scaling};
+    transform-origin: ${props => props.theme.origin};
     
     .btn-div{
         margin-bottom:20px;

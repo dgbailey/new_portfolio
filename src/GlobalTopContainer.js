@@ -26,9 +26,16 @@ export const GlobalTopContainer = () => {
             </div>
             <div className="parallax__layer parallax__layer--base">
                 <div className="front-end-description-container">
-                    <h1 className="front-end-project title">Professional products<br></br> and personal projects.</h1>
-                    <div className="front-end-project text">Most written in <strong>React</strong> with <strong>Redux </strong>for state management. Backend powered by Java's <strong>spring framework</strong> with <strong>PostgreSQL</strong> for data persistence.</div>
+                    <h1 className="front-end-project title">Professional &<br></br> and personal projects.</h1>
+                    <div className="front-end-project text">Written in <strong>React</strong> with <strong>Redux </strong>for state management. Backend powered by Java's <strong>spring framework</strong> with <strong>PostgreSQL</strong> for data persistence.</div>
                     
+                </div>
+            </div>
+            <div className="parallax__layer parallax__layer--full">
+                
+                <div className="content-container">
+                    
+                    <ProductCarousel theme={{origin:"transform-origin: 100% 50%"}}/>
                 </div>
             </div>
             
@@ -63,6 +70,7 @@ const StyledGlobalTopContainer = styled.section`
     perspective: 300px;
     scroll-behavior: smooth;
     width: 100%;
+    height:100%;
     display:flex;
     align-items:center;
     ${'' /* perspective: 1px;
@@ -89,12 +97,26 @@ const StyledGlobalTopContainer = styled.section`
     transform: translateZ(0);
     display: inline-block;
     white-space: normal;
+    display:flex;
+    align-items:center;
+    margin-left:30vh;
+    }
+
+    .parallax__layer--full {
+    transform: translateZ(60px) scale(.8);
+    display: inline-block;
+    white-space: normal;
+    display:flex;
+    align-items:flex-end;
+
+    
     }
     .parallax__layer--back {
         transform: translateZ(60px) scale(.8);
-        transform-origin: 10% 50%;
-        display: inline-block;
+        transform-origin: 70% 50%;
+        display: flex;
         white-space: normal;
+        z-index:2;
 
     }
 
@@ -102,13 +124,16 @@ const StyledGlobalTopContainer = styled.section`
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 0px 0px 100px 100px;
+       
     }
 
     .scroll-content-container{
         transform: translateZ(60px) scale(.8);
         height:100%;
         width:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
     }
     .portfolio-name{
         font-family:${theme.largeFont};
@@ -144,19 +169,19 @@ const StyledGlobalTopContainer = styled.section`
         
     }
 
-    .front-end-project-title{
-            margin:20px 0px;
-            padding-bottom:10px;
+    .front-end-project.title{
+            
             text-align:left;
             font-family:${theme.largeFont};
-            border-bottom:1px solid lightgray;
+            
             font-size: 4.2rem;
+            
             
 
         .secondary-heading{
             font-family:${theme.experimentalFont};
             color:#00000073;
-            font-size: 1.5rem;
+            font-size: 2.7rem;
             
             font-weight: 800;
         }
@@ -179,7 +204,7 @@ const StyledGlobalTopContainer = styled.section`
 }
             }
             .text{
-                font-size: 2.5rem;
+                font-size: 2.8rem;
                 color: #000000c2;
                 
 

@@ -27,6 +27,9 @@ export class ImageStylingContainer extends Component{
     }
 }
 
+
+
+
 const StyledTopPageGraphicsContainer = styled.div`
     
     width:100%;
@@ -40,7 +43,7 @@ const StyledTopPageGraphicsContainer = styled.div`
         
         .product-image{
             box-shadow: -12px 11px 27px 0px rgba(0,0,0,0.3);
-            width: 1000px;
+            width: 146vh;
             border-radius: 4px;
         }
         
@@ -59,3 +62,4 @@ const StyledTopPageGraphicsContainer = styled.div`
         
     }
 `
+
