@@ -55,7 +55,7 @@ export const GlobalTopContainer = () => {
             <div className="parallax__layer parallax__layer--base">
                 <div className="front-end-description-container">
             
-                    <div className="front-end-project text"> <strong>Talweg.</strong> Single page UI for on demand pasword sharing. <strong>React</strong> with <strong>Redux </strong>for state management.</div>
+                    <div className="front-end-project text"> <strong>Talweg.</strong> Single page UI for bookable pasword sharing. <strong>React</strong> with <strong>Redux </strong>for state management.</div>
                     
                 </div>
             </div>
