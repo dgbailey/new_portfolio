@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import styled from "styled-components";
 
-import {ImageStylingContainer} from "./ImageStylingContainer";
+import ImageStylingContainer from "./ImageStylingContainer";
 
 export class ProductCarousel extends Component{
     constructor(props){
@@ -15,7 +15,7 @@ export class ProductCarousel extends Component{
     }
 
     increment = () =>{
-        if(this.state.currentPage === this.state.imageArray.length -1){
+        if(this.state.currentPage === this.props.imageArray.length -1){
             this.setState({currentPage:0})
         }
         else{
@@ -26,7 +26,7 @@ export class ProductCarousel extends Component{
 
     decrement = () =>{
         if(this.state.currentPage === 0){
-            this.setState({currentPage:this.state.imageArray.length -1})
+            this.setState({currentPage:this.props.imageArray.length -1})
         }
         else{
             this.setState({currentPage:this.state.currentPage - 1})
@@ -43,9 +43,9 @@ export class ProductCarousel extends Component{
                     <button className="decrement-btn" onClick={this.decrement}>Prev</button>
                 </StyledBtnDiv>
         
-                {this.state.imageArray.map(
+                {this.props.imageArray.map(
                     (image,index) => 
-                    <ImageStylingContainer 
+                    <ImageStylingContainer top={this.props.top}
                     key={index} id={index} 
                     image={image}
                     currentPage={this.state.currentPage}

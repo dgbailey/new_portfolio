@@ -21,24 +21,51 @@ export const GlobalTopContainer = () => {
                 
                 <div className="content-container">
                     
-                    <ProductCarousel/>
+                    <ProductCarousel imageArray={["tieme_light","talweg_light","flocks_light","new_tieme_mark"]}/>
                 </div>
             </div>
             <div className="parallax__layer parallax__layer--base">
                 <div className="front-end-description-container">
                     <h1 className="front-end-project title">Professional &<br></br> and personal projects.</h1>
-                    <div className="front-end-project text">Written in <strong>React</strong> with <strong>Redux </strong>for state management. Backend powered by Java's <strong>spring framework</strong> with <strong>PostgreSQL</strong> for data persistence.</div>
+                    <div className="front-end-project text">Presenting <strong>Tieme Ndo CRM.</strong> Written in <strong>React</strong> with <strong>Redux </strong>for state management. Backend powered by Java's <strong>spring framework</strong> with <strong>PostgreSQL</strong> for data persistence.</div>
                     
                 </div>
             </div>
             <div className="parallax__layer parallax__layer--full">
                 
-                <div className="content-container">
+                <div className="content-container full">
                     
-                    <ProductCarousel theme={{origin:"transform-origin: 100% 50%"}}/>
+                    <ProductCarousel imageArray={["tieme_light","new_tieme_mark"]}/>
                 </div>
             </div>
+            <div className="parallax__layer parallax__layer--base">
+                <div className="front-end-description-container">
             
+                    <div className="front-end-project text">Introducing <strong>Flocks.</strong> Single page UI facilitating sentiment analysis on tweets. <strong>React</strong> with <strong>Redux </strong>for state management.</div>
+                    
+                </div>
+            </div>
+            <div className="parallax__layer parallax__layer--back">
+                
+                <div className="content-container full">
+                    
+                    <ProductCarousel imageArray={["flocks_light"]}/>
+                </div>
+            </div>
+            <div className="parallax__layer parallax__layer--base">
+                <div className="front-end-description-container">
+            
+                    <div className="front-end-project text"> <strong>Talweg.</strong> Single page UI for on demand pasword sharing. <strong>React</strong> with <strong>Redux </strong>for state management.</div>
+                    
+                </div>
+            </div>
+            <div className="parallax__layer parallax__layer--full">
+                
+                <div className="content-container full">
+                    
+                    <ProductCarousel imageArray={["talweg_light"]}/>
+                </div>
+            </div>
            
 
                 
@@ -103,16 +130,20 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .parallax__layer--full {
-    transform: translateZ(60px) scale(.8);
+    transform: translateZ(60px) scale(.75);
     display: inline-block;
     white-space: normal;
     display:flex;
     align-items:flex-end;
+    top:3vh;
+    position:relative;
+
+    
 
     
     }
     .parallax__layer--back {
-        transform: translateZ(60px) scale(.8);
+        transform: translateZ(60px) scale(.7);
         transform-origin: 70% 50%;
         display: flex;
         white-space: normal;
@@ -128,7 +159,7 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .scroll-content-container{
-        transform: translateZ(60px) scale(.8);
+        transform: translateZ(60px) scale(1);
         height:100%;
         width:100%;
         display:flex;
@@ -158,13 +189,13 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .longer-bio{
-        font-size:2rem;
+        font-size:2.8rem;
         ${theme.globalTextFont};
+        
         color: #000000a6;
         text-align: left;
-        width: 405px;
-        line-height: 3rem;
-        text-align:left;
+        width: 450px;
+        
 
         
     }

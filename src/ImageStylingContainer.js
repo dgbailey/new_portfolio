@@ -1,31 +1,33 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {theme} from "./config";
 
-export class ImageStylingContainer extends Component{
+
+function ImageStylingContainer(props) {
    
 
-    render(){
 
-        const {image,currentPage,id} = this.props;
+        const {image,currentPage,id} = props;
         return(
             
-            <StyledTopPageGraphicsContainer className={currentPage === id ? "":"hidden"}>
-           
-                
-                <div className="image-style-container">
-                    <div className="image-overlay"></div>
-                    <img className="product-image" src={require(`./images/${image}.png`)}/>
-                    
-                </div>
+                <StyledTopPageGraphicsContainer className={currentPage === id ? "":"hidden"}>
             
+                    
+                    <div className="image-style-container">
+                        <div className="image-overlay"></div>
+                        <img className="product-image" src={require(`./images/${image}.png`)}/>
+                        
+                    </div>
+                
+            
+                </StyledTopPageGraphicsContainer>
            
-            </StyledTopPageGraphicsContainer>
             
             
         )
-    }
+    
 }
+
+export default ImageStylingContainer
 
 
 
@@ -35,6 +37,7 @@ const StyledTopPageGraphicsContainer = styled.div`
     width:100%;
     position: relative;
     left:51px;
+    top: ${props => props.top}px;
 
     
 
