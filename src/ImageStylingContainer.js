@@ -36,7 +36,7 @@ const StyledTopPageGraphicsContainer = styled.div`
     
     width:100%;
     position: relative;
-    left:51px;
+    
     top: ${props => props.top}px;
 
     
@@ -46,7 +46,7 @@ const StyledTopPageGraphicsContainer = styled.div`
         
         .product-image{
             box-shadow: -12px 11px 27px 0px rgba(0,0,0,0.3);
-            width: 146vh;
+            width: 70vw;
             border-radius: 4px;
         }
         

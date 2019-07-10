@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x:hidden;
+  box-sizing: border-box;
+  height:100%;
+  width:100%;
+  transform: translateZ(0px);
 }
 
 code {
@@ -16,8 +21,11 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
+  overflow-x:hidden;
   font-size: 62.5%;
+  height:100%;
+  width:100%;
+  
 }
 
 /* margin is not part of the box model */
@@ -76,13 +84,9 @@ button {
   border: 1px solid lightgray;
 }
 
-body {
-  margin: 0;
-  padding: 0;
- 
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App{
+  height:100%;
+  width:100%;
 }
 
 code {
@@ -96,5 +100,9 @@ code {
 
 .hidden{
   display:none;
+}
+
+strong{
+  color:gray;
 }
 
