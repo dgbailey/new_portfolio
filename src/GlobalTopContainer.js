@@ -30,6 +30,35 @@ export const GlobalTopContainer = () => {
                 <div className="content-container full">
                     
                     <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
+                    <div className="under-carousel-description-cont">
+                    <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
+                        Historically, the organization's customer data was tracked with paper records. I was involved in every part of the technical stack for this project skewing toward front end. </p>
+                        <div className="ucd-infographic">
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
+                                    <div className="ucd-icon-description">Team members. Full stack dev, android & team lead.</div>
+                                </div>
+                            </div>
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
+                                    <div className="ucd-icon-description"> Project weeks.</div>
+                                </div>
+                            </div>
+                            <div className="icon-container">
+                                <div className="ucd-icon"></div>
+                                <div className="ucd-icon-description"></div>
+                            </div>
+                            
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                    <div className="ucd-icon-description">Codebase.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="parallax__layer parallax__layer--b">
@@ -42,6 +71,35 @@ export const GlobalTopContainer = () => {
                 <div className="content-container full">
                     
                     <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
+                    <div className="under-carousel-description-cont">
+                        <p className="ucd-paragraph">At its core, Flocks analyzes the toxicity of Twitter tweets. This front end was developed to facilitate the peaceful coexistence of data and humans. The team includes four data scientists utilizing Google's open source natural language processing (BERT) and
+                        one backend engineer.  I was responsible for the front end component architecture and design.</p>
+                        <div className="ucd-infographic">
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
+                                    <div className="ucd-icon-description">Team members. Data science, full stack dev & team lead.</div>
+                                </div>
+                            </div>
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><h1 className="icon-number">4</h1></div>
+                                    <div className="ucd-icon-description"> Project days.</div>
+                                </div>
+                            </div>
+                            <div className="icon-container">
+                                <div className="ucd-icon"></div>
+                                <div className="ucd-icon-description"></div>
+                            </div>
+                            
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                    <div className="ucd-icon-description">Codebase.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -54,6 +112,34 @@ export const GlobalTopContainer = () => {
                 <div className="content-container full">
                     
                     <ProductCarousel imageArray={["talweg_s"]}/>
+                    <div className="under-carousel-description-cont">
+                        <p className="ucd-paragraph">Talweg is a personal project trying to address inefficiences in subscription services by providing secure credential sharing for its users. I entered it into the Pioneer contest and finished in the top 20 of 100+ student entrants. It is my first foray into Chrome extensions, password management & browser automation. It is still in progress.</p>
+                        <div className="ucd-infographic">
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><h1 className="icon-number">1</h1></div>
+                                    <div className="ucd-icon-description">Team members. Full stack dev.</div>
+                                </div>
+                            </div>
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><h1 className="icon-number">3</h1></div>
+                                    <div className="ucd-icon-description"> Project days.</div>
+                                </div>
+                            </div>
+                            <div className="icon-container">
+                                <div className="ucd-icon"></div>
+                                <div className="ucd-icon-description"></div>
+                            </div>
+                           
+                            <div className="icon-container">
+                                <div className="icon-position-container">
+                                    <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                    <div className="ucd-icon-description">Codebase.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
            
@@ -104,7 +190,7 @@ const StyledGlobalTopContainer = styled.section`
     white-space: normal;
     display:flex;
     align-items:center;
-    padding:12%;
+    padding: 12% 12% 20% 12%;
     justify-content:center;
     flex-direction:column;
     
@@ -117,7 +203,7 @@ const StyledGlobalTopContainer = styled.section`
     white-space: normal;
     display:flex;
     align-items:center;
-    margin-top:12%;
+    margin-top:7%;
     justify-content:center;
     flex-direction:column;
     .front-end-description-container{
@@ -205,10 +291,13 @@ const StyledGlobalTopContainer = styled.section`
 
     .content-container{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         transform: translateZ(60px) scale(1);
         height:100%;
+        border-bottom: 1px solid lightgray;
+
+        padding-bottom: 30px;
        
     }
 
@@ -319,6 +408,70 @@ const StyledGlobalTopContainer = styled.section`
             }
 
             
+    }
+
+    .under-carousel-description-cont{
+        display:flex;
+        justify-content:space-between;
+        width: 60vw;
+        margin-top: 7%;
+
+        .ucd-paragraph{
+            font-size: 1.75rem;
+            text-align: left;
+            width: 45%;
+            color: gray;
+            line-height: 2.75rem;
+
+            
+        }
+
+        .ucd-infographic {
+            color:gray;
+            width: 45%;
+            display:grid;
+            grid-template-columns:repeat(2,auto);
+            grid-template-row:repeat(2,auto);
+            
+        }
+
+        .ucd-icon{
+            display:inline-block;
+            
+            padding-bottom:4px;
+
+            h1{
+                font-size:4.2rem;
+            }
+        }
+
+        .ucd-icon-description{
+            display:inline-block;
+            width:100px;
+            font-size: 1.4rem;
+            text-align:left;
+        }
+
+        .icon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+        }
+
+        .icon-position-container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            }
+
+
+    }
+
+    .fab.fa-git-square {
+    font-size: 4.2rem;
     }
 
     .fade-in {
