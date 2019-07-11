@@ -17,13 +17,7 @@ export const GlobalTopContainer = () => {
                     </p>
                 </div>
             </div>
-           {/* <div className="parallax__layer parallax__layer--back">
-                
-                <div className="content-container">
-                    
-                    <ProductCarousel imageArray={["tieme_light","talweg_light","flocks_light","new_tieme_mark"]}/>
-                </div>
-            </div> */}
+           
             <div className="parallax__layer parallax__layer--a">
                 <div className="front-end-description-container">
                     <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
@@ -35,7 +29,7 @@ export const GlobalTopContainer = () => {
                 
                 <div className="content-container full">
                     
-                    <ProductCarousel imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
+                    <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
                 </div>
             </div>
             <div className="parallax__layer parallax__layer--b">
@@ -50,20 +44,11 @@ export const GlobalTopContainer = () => {
                     <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
                 </div>
             </div>
-            {/* <div className="parallax__layer parallax__layer--back">
-                
-                <div className="content-container full">
-                    
-                    <ProductCarousel imageArray={["flocks_light"]}/>
-                </div>
-            </div> */}
-            {/* <div className="parallax__layer parallax__layer--full">
-                
-            </div> */}
+            
             <div className="parallax__layer parallax__layer--d">
                 <div className="front-end-description-container">
                 
-                    <div className="front-end-project text"> <strong>Talweg</strong> <br></br> <strong>React &</strong> <strong>Redux.</strong><br></br>Bookable paswords.</div>
+                    <div className="front-end-project text"> <strong>Talweg</strong> <br></br> <strong>React &</strong> <strong>Redux.</strong><br></br>Subscription management.</div>
                 
                 </div>
                 <div className="content-container full">
@@ -89,47 +74,33 @@ export const GlobalTopContainer = () => {
 
 const StyledGlobalTopContainer = styled.section`
 
-    ${'' /* display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    padding: 50px; */}
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
     position: absolute;
-    ${'' /* overflow-x: auto;
-    overflow-y: hidden; */}
+    
     perspective: 300px;
     scroll-behavior: smooth;
     width: 100%;
     height:100%;
-    display:flex;
-    align-items:center;
-    flex-direction:column;
-    
-    ${'' /* perspective: 1px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto; */}
 
+    ${'' /* DUSTIN FLEXING THIS LAYER CAUSES BIG PROBS WITH PARALLAX IN SAFARI */}
+
+   
+   
     .parallax__layer {
-    ${'' /* position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 100vh 0; */}
-    ${'' /* transform-style: preserve-3d; */}
+    
     width: 100%;
-    height: 100%;
-    display: inline-block;
+   
+    
     vertical-align: middle;
     white-space: normal;
+    ${'' /* transform-style:preserve-3d; */}
     
     }
     .parallax__layer--intro {
     transform: translateZ(0);
-    display: inline-block;
+    
     white-space: normal;
     display:flex;
     align-items:center;
@@ -141,7 +112,8 @@ const StyledGlobalTopContainer = styled.section`
     }
     .parallax__layer--a {
     transform: translateZ(0);
-    display: inline-block;
+    
+    
     white-space: normal;
     display:flex;
     align-items:center;
@@ -149,6 +121,7 @@ const StyledGlobalTopContainer = styled.section`
     justify-content:center;
     flex-direction:column;
     .front-end-description-container{
+        display:flex;
         flex-direction:column;
         width:70vw;
         .text{
@@ -160,7 +133,7 @@ const StyledGlobalTopContainer = styled.section`
     }
     .parallax__layer--b {
     transform: translateZ(0);
-    display: inline-block;
+    ${'' /* display: inline-block; */}
     white-space: normal;
     display:flex;
     align-items:center;
@@ -173,6 +146,7 @@ const StyledGlobalTopContainer = styled.section`
             justify-content:flex-start;
             .text{
                 font-size:5rem;
+                width:600px;
             }
         
         }
@@ -180,7 +154,7 @@ const StyledGlobalTopContainer = styled.section`
 
     .parallax__layer--c {
     transform: translateZ(60px) scale(.8);
-    display: inline-block;
+    ${'' /* display: inline-block; */}
     white-space: normal;
     display:flex;
     align-items:flex-end;
@@ -197,7 +171,7 @@ const StyledGlobalTopContainer = styled.section`
 
     .parallax__layer--d{
         transform: translateZ(60px) scale(.8);
-        display: inline-block;
+        ${'' /* display: inline-block; */}
         white-space: normal;
         display:flex;
         align-items:flex-end;
@@ -212,6 +186,7 @@ const StyledGlobalTopContainer = styled.section`
             justify-content:flex-start;
             .text{
                 font-size:5rem;
+                width:600px;
             }
         
         }
@@ -232,6 +207,8 @@ const StyledGlobalTopContainer = styled.section`
         display: flex;
         flex-direction: row;
         align-items: center;
+        transform: translateZ(60px) scale(1);
+        height:100%;
        
     }
 
@@ -318,7 +295,7 @@ const StyledGlobalTopContainer = styled.section`
     .front-end-description-container{
             display:flex;
             width:100%;
-            justify-content:space-evenly;
+            justify-content:space-between;
             margin:2vh;
             
 
