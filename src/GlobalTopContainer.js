@@ -12,7 +12,7 @@ export const GlobalTopContainer = () => {
                     <h1 className="portfolio-name">Dustin Bailey</h1>
                                     
                     <p className="longer-bio">A developer with immense appreciation for beautiful design throughout the technical stack.
-                        Dustin is currently a student a Lambda School.
+                        Currently residing in San Francisco.
                                         
                     </p>
                 </div>
@@ -35,7 +35,7 @@ export const GlobalTopContainer = () => {
                 
                 <div className="content-container full">
                     
-                    <ProductCarousel imageArray={["tieme_light","new_tieme_mark"]}/>
+                    <ProductCarousel imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
                 </div>
             </div>
             <div className="parallax__layer parallax__layer--b">
@@ -47,7 +47,7 @@ export const GlobalTopContainer = () => {
             
                 <div className="content-container full">
                     
-                    <ProductCarousel imageArray={["flocks_light"]}/>
+                    <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
                 </div>
             </div>
             {/* <div className="parallax__layer parallax__layer--back">
@@ -68,7 +68,7 @@ export const GlobalTopContainer = () => {
                 </div>
                 <div className="content-container full">
                     
-                    <ProductCarousel imageArray={["talweg_light"]}/>
+                    <ProductCarousel imageArray={["talweg_s"]}/>
                 </div>
             </div>
            
@@ -179,7 +179,7 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .parallax__layer--c {
-    transform: translateZ(60px) scale(.75);
+    transform: translateZ(60px) scale(.8);
     display: inline-block;
     white-space: normal;
     display:flex;
@@ -196,7 +196,7 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .parallax__layer--d{
-        transform: translateZ(60px) scale(.75);
+        transform: translateZ(60px) scale(.8);
         display: inline-block;
         white-space: normal;
         display:flex;
@@ -246,7 +246,8 @@ const StyledGlobalTopContainer = styled.section`
     }
     .portfolio-name{
         font-family:${theme.largeFont};
-        font-size: 6rem;
+        font-size: 8rem;
+        font-weight:500;
 
         margin: 0px 0px 20px;
 
@@ -286,7 +287,7 @@ const StyledGlobalTopContainer = styled.section`
         color: #000000a6;
         text-align: center;
         width: 600px;
-        padding: 40px;
+        padding:0px 40px;
        
 
         
