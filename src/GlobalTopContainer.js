@@ -21,11 +21,7 @@ export const GlobalTopContainer = () => {
             <div className="parallax__layer parallax__layer--a">
                 <div className="front-end-description-container">
                     <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
-<<<<<<< HEAD
                     <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM.</strong><br></br>  <strong>React &</strong> <strong>Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div>
-=======
-                    <div className="front-end-project text"><br></br> <strong>Tieme Ndo CRM</strong><br></br>  <strong>React &</strong> <strong>Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div>
->>>>>>> 45a4e8c989ad6a495f08f1d61711a9f555f0a385
                     
                 </div>
             </div>
