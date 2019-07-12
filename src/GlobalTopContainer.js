@@ -21,7 +21,7 @@ export const GlobalTopContainer = () => {
             <div className="parallax__layer parallax__layer--a">
                 <div className="front-end-description-container">
                     <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
-                    <div className="front-end-project text"><br></br> <strong>Tieme Ndo CRM.</strong><br></br>  <strong>React &</strong> <strong>Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div>
+                    <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM.</strong><br></br>  <strong>React &</strong> <strong>Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div>
                     
                 </div>
             </div>
@@ -64,7 +64,7 @@ export const GlobalTopContainer = () => {
             <div className="parallax__layer parallax__layer--b">
                 <div className="front-end-description-container">
             
-                    <div className="front-end-project text"><strong>Flocks</strong><br></br><strong>React &</strong> <strong>Redux. </strong><br></br> Sentiment analysis UI.</div>
+                    <div className="front-end-project text"><strong className="strong-title"><em>Flocks</em></strong><br></br><strong>React &</strong> <strong>Redux. </strong><br></br> <span className="elevator-line"><strong>Sentiment analysis UI.</strong></span></div>
                     
                 </div>
             
@@ -106,7 +106,7 @@ export const GlobalTopContainer = () => {
             <div className="parallax__layer parallax__layer--d">
                 <div className="front-end-description-container">
                 
-                    <div className="front-end-project text"> <strong>Talweg</strong> <br></br> <strong>React &</strong> <strong>Redux.</strong><br></br>Subscription management.</div>
+                    <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong> <br></br> <strong>React &</strong> <strong>Redux.</strong><br></br><span className="elevator-line"><strong>Subscription management.</strong></span></div>
                 
                 </div>
                 <div className="content-container full">
@@ -232,7 +232,7 @@ const StyledGlobalTopContainer = styled.section`
             justify-content:flex-start;
             .text{
                 font-size:5rem;
-                width:600px;
+                width:700px;
             }
         
         }
@@ -272,7 +272,7 @@ const StyledGlobalTopContainer = styled.section`
             justify-content:flex-start;
             .text{
                 font-size:5rem;
-                width:600px;
+                width:700px;
             }
         
         }
@@ -408,6 +408,15 @@ const StyledGlobalTopContainer = styled.section`
             }
 
             
+    }
+    .strong-title{
+        color:black;
+        
+    }
+
+    .elevator-line{
+        color:gray;
+        
     }
 
     .under-carousel-description-cont{
