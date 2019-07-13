@@ -10,22 +10,28 @@ export class GlobalTopContainer extends Component{
     componentDidMount(){
         document.addEventListener('scroll', this.dropTextAndOpacity,true)
         document.addEventListener('scroll', this.titleTextAndOpacity,true)
+        document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
+        document.addEventListener('scroll', this.uCdTextAndOpacity,true)
         // adding true here was extremely important
     }
     
 
     dropTextAndOpacity = (e) => {
         
-        let el = document.querySelector(".big-overview-text")
-        let y = document.querySelector(".big-overview-text").getBoundingClientRect().top
+        let elementList = document.querySelectorAll(".big-overview-text")
+        elementList.forEach( element => {
 
-        let innerWindowSize = window.innerHeight
-        console.log(y,innerWindowSize)
+            let elDistFromTop = element.getBoundingClientRect().top
+            let innerWindowSize = window.innerHeight
 
-        if(y < innerWindowSize){
-            el.classList.add("fade-up-delay")
-        }
-        
+            if(elDistFromTop < innerWindowSize){
+                element.classList.add("fade-up-delay")
+            }
+
+
+
+
+        })
       
         
         
@@ -38,25 +44,69 @@ export class GlobalTopContainer extends Component{
 
     titleTextAndOpacity = (e) => {
         
-        let el = document.querySelector(".strong-title")
-        let y = document.querySelector(".strong-title").getBoundingClientRect().top
+        let elementList = document.querySelectorAll(".strong-title")
+        elementList.forEach( element => {
 
-        let innerWindowSize = window.innerHeight
-        console.log(y,innerWindowSize)
+            let elDistFromTop = element.getBoundingClientRect().top
+            let innerWindowSize = window.innerHeight
 
-        if(y < innerWindowSize){
-            el.classList.add("fade-up")
-        }
-        
-      
-        
-        
-      // do something at end of scroll
-        
-            
-    
-        
+            if(elDistFromTop < innerWindowSize){
+                element.classList.add("fade-up")
+            }
+
+
+
+
+        })
+
+        // console.log(y,innerWindowSize
     }
+
+    iconDescTextAndOpacity = (e) => {
+        
+        let elementList = document.querySelectorAll(".icon-position-container")
+        elementList.forEach( element => {
+
+            let elDistFromTop = element.getBoundingClientRect().top
+            let innerWindowSize = window.innerHeight
+
+            if(elDistFromTop < innerWindowSize){
+                element.classList.add("fade-in-icon")
+            }
+
+
+
+
+        })
+
+
+        
+        // console.log(y,innerWindowSize
+    }
+
+    uCdTextAndOpacity = (e) => {
+        
+        let elementList = document.querySelectorAll(".ucd-paragraph")
+        elementList.forEach( element => {
+
+            let elDistFromTop = element.getBoundingClientRect().top
+            let innerWindowSize = window.innerHeight
+
+            if(elDistFromTop < innerWindowSize){
+                element.classList.add("fade-in-icon")
+            }
+
+
+
+
+        })
+
+
+        
+        // console.log(y,innerWindowSize
+    }
+
+    
 
     render(){
 
@@ -77,7 +127,7 @@ export class GlobalTopContainer extends Component{
                 <div  className="parallax__layer parallax__layer--a">
                     <div className="front-end-description-container">
                         <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
-                        <div className="front-end-project text"><br></br> <div className="strong-title"><strong ><em>Tieme Ndo</em> CRM.</strong></div><br></br> <div className="big-overview-text"> <strong>React &</strong> <strong>Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
+                        <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM.</strong> <div className="big-overview-text"> <strong>React & Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
                         
                     </div>
                 </div>
@@ -120,7 +170,7 @@ export class GlobalTopContainer extends Component{
                 <div className="parallax__layer parallax__layer--b">
                     <div className="front-end-description-container">
                 
-                        <div className="front-end-project text"><strong className="strong-title"><em>Flocks</em></strong><br></br><strong>React &</strong> <strong>Redux. </strong><br></br> <span className="elevator-line"><strong>Sentiment analysis UI.</strong></span></div>
+                        <div className="front-end-project text"><strong className="strong-title"><em>Flocks</em></strong><div className="big-overview-text"><strong>React & Redux. </strong><br></br> <span className="elevator-line"><strong>Sentiment analysis UI.</strong></span></div></div>
                         
                     </div>
                 
@@ -162,7 +212,7 @@ export class GlobalTopContainer extends Component{
                 <div className="parallax__layer parallax__layer--d">
                     <div className="front-end-description-container">
                     
-                        <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong> <br></br> <strong>React &</strong> <strong>Redux.</strong><br></br><span className="elevator-line"><strong>Subscription management.</strong></span></div>
+                        <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong><div className="big-overview-text"><strong>React & Redux.</strong><br></br><span className="elevator-line"><strong>Subscription management.</strong></span></div></div>
                     
                     </div>
                     <div className="content-container full">
@@ -280,12 +330,13 @@ const StyledGlobalTopContainer = styled.section`
 
     }
     .parallax__layer--b {
+        margin-top: 4%;
     transform: translateZ(0);
     ${'' /* display: inline-block; */}
     white-space: normal;
     display:flex;
     align-items:center;
-    margin-top:12%;
+   
     justify-content:center;
     flex-direction:column;
 
@@ -304,6 +355,7 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .parallax__layer--c {
+    margin-top: 4%;
     transform: translateZ(60px) scale(.8);
     ${'' /* display: inline-block; */}
     white-space: normal;
@@ -321,17 +373,18 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .parallax__layer--d{
+        margin-top: 4%;
         transform: translateZ(60px) scale(.8);
         ${'' /* display: inline-block; */}
         white-space: normal;
         display:flex;
         align-items:flex-end;
-        top:3vh;
+        
         position:relative;
         justify-content: center;
         flex-direction:column;
         align-items:center;
-        transform-origin: 50% 120%;
+        
         .front-end-description-container{
             width:70vw;
             justify-content:flex-start;
@@ -492,6 +545,7 @@ const StyledGlobalTopContainer = styled.section`
         justify-content:space-between;
         width: 60vw;
         margin-top: 7%;
+        overflow:hidden;
 
         .ucd-paragraph{
             font-size: 1.75rem;
@@ -541,6 +595,7 @@ const StyledGlobalTopContainer = styled.section`
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+           
 
             }
 
@@ -558,18 +613,25 @@ const StyledGlobalTopContainer = styled.section`
     animation:         fade-in-animation 1s ease; /* IE 10+, Fx 29+ */
     }
 
-    .fade-up{
-    -webkit-animation: fade-up-animation 1s ease; /* Safari 4+ */
-    -moz-animation:    fade-up-animation 1s ease; /* Fx 5+ */
-    -o-animation:      fade-up-animation 1s ease; /* Opera 12+ */
-    animation:         fade-up-animation 1s ease; /* IE 10+, Fx 29+ */
+    .fade-in-icon{
+    -webkit-animation: fade-in-icon 1.1s ease; /* Safari 4+ */
+    -moz-animation:    fade-in-icon 1.1s ease; /* Fx 5+ */
+    -o-animation:      fade-in-icon 1.1s ease; /* Opera 12+ */
+    animation:         fade-in-icon 1.1s ease; /* IE 10+, Fx 29+ */
     }
 
-    .fade-up-delay{
+    .fade-up{
     -webkit-animation: fade-up-animation 1.1s ease; /* Safari 4+ */
     -moz-animation:    fade-up-animation 1.1s ease; /* Fx 5+ */
     -o-animation:      fade-up-animation 1.1s ease; /* Opera 12+ */
     animation:         fade-up-animation 1.1s ease; /* IE 10+, Fx 29+ */
+    }
+
+    .fade-up-delay{
+    -webkit-animation: fade-up-animation 1.4s ease; /* Safari 4+ */
+    -moz-animation:    fade-up-animation 1.4s ease; /* Fx 5+ */
+    -o-animation:      fade-up-animation 1.4s ease; /* Opera 12+ */
+    animation:         fade-up-animation 1.4s ease; /* IE 10+, Fx 29+ */
     }
 
     @-webkit-keyframes fade-in-animation {
@@ -601,32 +663,62 @@ const StyledGlobalTopContainer = styled.section`
         transform:translateY(0px)}
     }
 
+    ${'' /* fade in icon */}
+    @-webkit-keyframes fade-in-icon {
+    0%   { opacity: 0; 
+            transform:translateY(10px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @-moz-keyframes fade-in-icon {
+        0%   { opacity: 0; 
+            transform:translateY(10px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @-o-keyframes fade-in-icon {
+        0%   { opacity: 0; 
+            transform:translateY(10px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @keyframes fade-in-icon {
+        0%   { opacity: 0; 
+            transform:translateY(10px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+
 
     ${'' /* fadeup */}
     @-webkit-keyframes fade-up-animation {
     0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(80px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-moz-keyframes fade-up-animation {
         0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(80px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-o-keyframes fade-up-animation {
         0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(80px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @keyframes fade-up-animation {
         0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(80px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
