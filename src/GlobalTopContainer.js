@@ -1,159 +1,218 @@
-import React, {Compoent} from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
 import {theme} from "./config";
 import {ProductCarousel} from "./ProductCarousel";
 
-export const GlobalTopContainer = () => {
-    return(
-        <StyledGlobalTopContainer>
-            <div className="parallax__layer parallax__layer--intro">
-                <div className="scroll-content-container">
-                    <h2 className="portfolio-sub-name">FULL STACK ENGINEER</h2>
-                    <h1 className="portfolio-name">Dustin Bailey</h1>
-                                    
-                    <p className="longer-bio">A developer with immense appreciation for beautiful design throughout the technical stack.
-                        Currently residing in San Francisco.
+export class GlobalTopContainer extends Component{
+
+
+    
+    componentDidMount(){
+        document.addEventListener('scroll', this.dropTextAndOpacity,true)
+        document.addEventListener('scroll', this.titleTextAndOpacity,true)
+        // adding true here was extremely important
+    }
+    
+
+    dropTextAndOpacity = (e) => {
+        
+        let el = document.querySelector(".big-overview-text")
+        let y = document.querySelector(".big-overview-text").getBoundingClientRect().top
+
+        let innerWindowSize = window.innerHeight
+        console.log(y,innerWindowSize)
+
+        if(y < innerWindowSize){
+            el.classList.add("fade-up-delay")
+        }
+        
+      
+        
+        
+      // do something at end of scroll
+        
+            
+    
+        
+    }
+
+    titleTextAndOpacity = (e) => {
+        
+        let el = document.querySelector(".strong-title")
+        let y = document.querySelector(".strong-title").getBoundingClientRect().top
+
+        let innerWindowSize = window.innerHeight
+        console.log(y,innerWindowSize)
+
+        if(y < innerWindowSize){
+            el.classList.add("fade-up")
+        }
+        
+      
+        
+        
+      // do something at end of scroll
+        
+            
+    
+        
+    }
+
+    render(){
+
+        return(
+            <StyledGlobalTopContainer>
+                <div className="parallax__layer parallax__layer--intro">
+                    <div className="scroll-content-container">
+                        <h2 className="portfolio-sub-name">FULL STACK ENGINEER</h2>
+                        <h1 className="portfolio-name">Dustin Bailey</h1>
                                         
-                    </p>
+                        <p className="longer-bio">A developer with immense appreciation for beautiful design throughout the technical stack.
+                            Currently residing in San Francisco.
+                                            
+                        </p>
+                    </div>
                 </div>
-            </div>
-           
-            <div className="parallax__layer parallax__layer--a">
-                <div className="front-end-description-container">
-                    <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
-                    <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM.</strong><br></br>  <strong>React &</strong> <strong>Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div>
+            
+                <div  className="parallax__layer parallax__layer--a">
+                    <div className="front-end-description-container">
+                        <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
+                        <div className="front-end-project text"><br></br> <div className="strong-title"><strong ><em>Tieme Ndo</em> CRM.</strong></div><br></br> <div className="big-overview-text"> <strong>React &</strong> <strong>Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
+                        
+                    </div>
+                </div>
+                <div className="parallax__layer parallax__layer--c">
                     
+                    <div className="content-container full">
+                        
+                        <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
+                        <div className="under-carousel-description-cont">
+                        <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
+                            Historically, the organization's customer data was tracked with paper records. I was involved in every part of the technical stack for this project skewing toward front end. </p>
+                            <div className="ucd-infographic">
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
+                                        <div className="ucd-icon-description">Team members. Full stack dev, android & team lead.</div>
+                                    </div>
+                                </div>
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
+                                        <div className="ucd-icon-description"> Project weeks.</div>
+                                    </div>
+                                </div>
+                                <div className="icon-container">
+                                    <div className="ucd-icon"></div>
+                                    <div className="ucd-icon-description"></div>
+                                </div>
+                                
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                        <div className="ucd-icon-description">Codebase.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="parallax__layer parallax__layer--c">
+                <div className="parallax__layer parallax__layer--b">
+                    <div className="front-end-description-container">
                 
-                <div className="content-container full">
+                        <div className="front-end-project text"><strong className="strong-title"><em>Flocks</em></strong><br></br><strong>React &</strong> <strong>Redux. </strong><br></br> <span className="elevator-line"><strong>Sentiment analysis UI.</strong></span></div>
+                        
+                    </div>
+                
+                    <div className="content-container full">
+                        
+                        <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
+                        <div className="under-carousel-description-cont">
+                            <p className="ucd-paragraph">At its core, Flocks analyzes the toxicity of Twitter tweets. This front end was developed to facilitate the peaceful coexistence of data and humans. The team includes four data scientists utilizing Google's open source natural language processing (BERT) and
+                            one backend engineer.  I was responsible for the front end component architecture and design.</p>
+                            <div className="ucd-infographic">
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
+                                        <div className="ucd-icon-description">Team members. Data science, full stack dev & team lead.</div>
+                                    </div>
+                                </div>
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">4</h1></div>
+                                        <div className="ucd-icon-description"> Project days.</div>
+                                    </div>
+                                </div>
+                                <div className="icon-container">
+                                    <div className="ucd-icon"></div>
+                                    <div className="ucd-icon-description"></div>
+                                </div>
+                                
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                        <div className="ucd-icon-description">Codebase.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="parallax__layer parallax__layer--d">
+                    <div className="front-end-description-container">
                     
-                    <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
-                    <div className="under-carousel-description-cont">
-                    <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
-                        Historically, the organization's customer data was tracked with paper records. I was involved in every part of the technical stack for this project skewing toward front end. </p>
-                        <div className="ucd-infographic">
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
-                                    <div className="ucd-icon-description">Team members. Full stack dev, android & team lead.</div>
+                        <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong> <br></br> <strong>React &</strong> <strong>Redux.</strong><br></br><span className="elevator-line"><strong>Subscription management.</strong></span></div>
+                    
+                    </div>
+                    <div className="content-container full">
+                        
+                        <ProductCarousel imageArray={["talweg_s"]}/>
+                        <div className="under-carousel-description-cont">
+                            <p className="ucd-paragraph">Talweg is a personal project trying to address inefficiences in subscription services by providing secure credential sharing for its users. I entered it into the Pioneer contest and finished in the top 20 of 100+ student entrants. It is my first foray into Chrome extensions, password management & browser automation. It is still in progress.</p>
+                            <div className="ucd-infographic">
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">1</h1></div>
+                                        <div className="ucd-icon-description">Team members. Full stack dev.</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
-                                    <div className="ucd-icon-description"> Project weeks.</div>
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">3</h1></div>
+                                        <div className="ucd-icon-description"> Project days.</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="icon-container">
-                                <div className="ucd-icon"></div>
-                                <div className="ucd-icon-description"></div>
-                            </div>
+                                <div className="icon-container">
+                                    <div className="ucd-icon"></div>
+                                    <div className="ucd-icon-description"></div>
+                                </div>
                             
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                    <div className="ucd-icon-description">Codebase.</div>
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                        <div className="ucd-icon-description">Codebase.</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="parallax__layer parallax__layer--b">
-                <div className="front-end-description-container">
             
-                    <div className="front-end-project text"><strong className="strong-title"><em>Flocks</em></strong><br></br><strong>React &</strong> <strong>Redux. </strong><br></br> <span className="elevator-line"><strong>Sentiment analysis UI.</strong></span></div>
-                    
-                </div>
-            
-                <div className="content-container full">
-                    
-                    <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
-                    <div className="under-carousel-description-cont">
-                        <p className="ucd-paragraph">At its core, Flocks analyzes the toxicity of Twitter tweets. This front end was developed to facilitate the peaceful coexistence of data and humans. The team includes four data scientists utilizing Google's open source natural language processing (BERT) and
-                        one backend engineer.  I was responsible for the front end component architecture and design.</p>
-                        <div className="ucd-infographic">
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
-                                    <div className="ucd-icon-description">Team members. Data science, full stack dev & team lead.</div>
-                                </div>
-                            </div>
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><h1 className="icon-number">4</h1></div>
-                                    <div className="ucd-icon-description"> Project days.</div>
-                                </div>
-                            </div>
-                            <div className="icon-container">
-                                <div className="ucd-icon"></div>
-                                <div className="ucd-icon-description"></div>
-                            </div>
-                            
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                    <div className="ucd-icon-description">Codebase.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div className="parallax__layer parallax__layer--d">
-                <div className="front-end-description-container">
-                
-                    <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong> <br></br> <strong>React &</strong> <strong>Redux.</strong><br></br><span className="elevator-line"><strong>Subscription management.</strong></span></div>
-                
-                </div>
-                <div className="content-container full">
-                    
-                    <ProductCarousel imageArray={["talweg_s"]}/>
-                    <div className="under-carousel-description-cont">
-                        <p className="ucd-paragraph">Talweg is a personal project trying to address inefficiences in subscription services by providing secure credential sharing for its users. I entered it into the Pioneer contest and finished in the top 20 of 100+ student entrants. It is my first foray into Chrome extensions, password management & browser automation. It is still in progress.</p>
-                        <div className="ucd-infographic">
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><h1 className="icon-number">1</h1></div>
-                                    <div className="ucd-icon-description">Team members. Full stack dev.</div>
-                                </div>
-                            </div>
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><h1 className="icon-number">3</h1></div>
-                                    <div className="ucd-icon-description"> Project days.</div>
-                                </div>
-                            </div>
-                            <div className="icon-container">
-                                <div className="ucd-icon"></div>
-                                <div className="ucd-icon-description"></div>
-                            </div>
-                           
-                            <div className="icon-container">
-                                <div className="icon-position-container">
-                                    <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                    <div className="ucd-icon-description">Codebase.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
 
+                    
                 
             
-           
+                
             
-           
-            
-   
+                
+    
 
-        </StyledGlobalTopContainer>
-    )
+            </StyledGlobalTopContainer>
+        )
+
+    }
+            
 }
 
 
@@ -211,8 +270,11 @@ const StyledGlobalTopContainer = styled.section`
         flex-direction:column;
         width:70vw;
         .text{
-            font-size:5rem;
-            width:700px;
+            font-size: 5rem;
+            width: 700px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
         }
     }
 
@@ -231,8 +293,11 @@ const StyledGlobalTopContainer = styled.section`
             width:70vw;
             justify-content:flex-start;
             .text{
-                font-size:5rem;
-                width:700px;
+                font-size: 5rem;
+                width: 700px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 5%;
             }
         
         }
@@ -271,8 +336,11 @@ const StyledGlobalTopContainer = styled.section`
             width:70vw;
             justify-content:flex-start;
             .text{
-                font-size:5rem;
-                width:700px;
+                font-size: 5rem;
+                width: 700px;
+                display: flex;
+                flex-direction: column;
+                margin-top: 5%;
             }
         
         }
@@ -483,11 +551,26 @@ const StyledGlobalTopContainer = styled.section`
     font-size: 4.2rem;
     }
 
-    .fade-in {
-    -webkit-animation: fade-in-animation 2s ease; /* Safari 4+ */
-    -moz-animation:    fade-in-animation 2s ease; /* Fx 5+ */
-    -o-animation:      fade-in-animation 2s ease; /* Opera 12+ */
-    animation:         fade-in-animation 2s ease; /* IE 10+, Fx 29+ */
+    .fade-in{
+    -webkit-animation: fade-in-animation 1s ease; /* Safari 4+ */
+    -moz-animation:    fade-in-animation 1s ease; /* Fx 5+ */
+    -o-animation:      fade-in-animation 1s ease; /* Opera 12+ */
+    animation:         fade-in-animation 1s ease; /* IE 10+, Fx 29+ */
+    }
+
+    .fade-up{
+    -webkit-animation: fade-up-animation 1s ease; /* Safari 4+ */
+    -moz-animation:    fade-up-animation 1s ease; /* Fx 5+ */
+    -o-animation:      fade-up-animation 1s ease; /* Opera 12+ */
+    animation:         fade-up-animation 1s ease; /* IE 10+, Fx 29+ */
+    }
+
+    .fade-up-delay{
+    -webkit-animation: fade-up-animation 1.1s ease; /* Safari 4+ */
+    -moz-animation:    fade-up-animation 1.1s ease; /* Fx 5+ */
+    -o-animation:      fade-up-animation 1.1s ease; /* Opera 12+ */
+    animation:         fade-up-animation 1.1s ease; /* IE 10+, Fx 29+ */
+    }
 
     @-webkit-keyframes fade-in-animation {
     0%   { opacity: 0; 
@@ -517,6 +600,68 @@ const StyledGlobalTopContainer = styled.section`
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
+
+
+    ${'' /* fadeup */}
+    @-webkit-keyframes fade-up-animation {
+    0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @-moz-keyframes fade-up-animation {
+        0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @-o-keyframes fade-up-animation {
+        0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @keyframes fade-up-animation {
+        0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+
+    ${'' /* fadeup-delay */}
+    @-webkit-keyframes fade-up-delay-animation {
+    0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @-moz-keyframes fade-up-delay-animation {
+        0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @-o-keyframes fade-up-delay-animation {
+        0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    @keyframes fade-up-delay-animation {
+        0%   { opacity: 0; 
+            transform:translateY(50px)}
+            
+    100% { opacity: 1; 
+        transform:translateY(0px)}
+    }
+    
 
 
     
