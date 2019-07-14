@@ -63,7 +63,7 @@ export class GlobalTopContainer extends Component{
     }
 
     iconDescTextAndOpacity = (e) => {
-        
+        let subElementList = document.querySelectorAll(".ucd-icon-description")
         let elementList = document.querySelectorAll(".icon-position-container")
         elementList.forEach( element => {
 
@@ -72,6 +72,20 @@ export class GlobalTopContainer extends Component{
 
             if(elDistFromTop < innerWindowSize){
                 element.classList.add("fade-in-icon")
+            }
+
+
+
+
+        })
+
+        subElementList.forEach( element => {
+
+            let elDistFromTop = element.getBoundingClientRect().top
+            let innerWindowSize = window.innerHeight
+
+            if(elDistFromTop < innerWindowSize){
+                element.classList.add("fade-in-opacity-only")
             }
 
 
@@ -127,7 +141,7 @@ export class GlobalTopContainer extends Component{
                 <div  className="parallax__layer parallax__layer--a">
                     <div className="front-end-description-container">
                         <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
-                        <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM.</strong> <div className="big-overview-text"> <strong>React & Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
+                        <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM</strong> <div className="big-overview-text"> <strong>React & Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
                         
                     </div>
                 </div>
@@ -138,12 +152,12 @@ export class GlobalTopContainer extends Component{
                         <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
                         <div className="under-carousel-description-cont">
                         <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
-                            Historically, the organization's customer data was tracked with paper records. I was involved in every part of the technical stack for this project skewing toward front end. </p>
+                            Historically, the organization's customer data was tracked with paper records. I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
                                     <div className="icon-position-container">
                                         <div className="ucd-icon"><h1 className="icon-number">6</h1></div>
-                                        <div className="ucd-icon-description">Team members. Full stack dev, android & team lead.</div>
+                                        <div className="ucd-icon-description">Team members. Full stack dev, android & team lead.</div> 
                                     </div>
                                 </div>
                                 <div className="icon-container">
@@ -178,8 +192,8 @@ export class GlobalTopContainer extends Component{
                         
                         <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
                         <div className="under-carousel-description-cont">
-                            <p className="ucd-paragraph">At its core, Flocks analyzes the toxicity of Twitter tweets. This front end was developed to facilitate the peaceful coexistence of data and humans. The team includes four data scientists utilizing Google's open source natural language processing (BERT) and
-                            one backend engineer.  I was responsible for the front end component architecture and design.</p>
+                            <p className="ucd-paragraph">Flocks analyzes the toxcicity of Twitter topics. The front end leveraged the Twitter API to facilitate searches of trending topics and to display tweets processed by the toxcicity algorithm.  Flocks was also intended to serve as a visualization tool for relevant statistics. The team included four data science students + Google's open source natural language processing (BERT) and
+                            one backend engineer.  The Sentiment API is still in progress. I was responsible for the entire front end component architecture and design.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
                                     <div className="icon-position-container">
@@ -613,6 +627,13 @@ const StyledGlobalTopContainer = styled.section`
     animation:         fade-in-animation 1s ease; /* IE 10+, Fx 29+ */
     }
 
+    .fade-in-opacity-only{
+    -webkit-animation: fade-in-opacity-only-animation 2s ease; /* Safari 4+ */
+    -moz-animation:    fade-in-opacity-only-animation 2s ease; /* Fx 5+ */
+    -o-animation:      fade-in-opacity-only-animation 2s ease; /* Opera 12+ */
+    animation:         fade-in-opacity-only-animation 2s ease; /* IE 10+, Fx 29+ */
+    }
+
     .fade-in-icon{
     -webkit-animation: fade-in-icon 1.1s ease; /* Safari 4+ */
     -moz-animation:    fade-in-icon 1.1s ease; /* Fx 5+ */
@@ -662,6 +683,37 @@ const StyledGlobalTopContainer = styled.section`
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
+    ${'' /* fade in opacity only */}
+
+    @-webkit-keyframes fade-in-opacity-only-animation {
+    0%   { opacity: 0; 
+            }
+            
+    100% { opacity: 1; 
+        }
+    }
+    @-moz-keyframes fade-in-opacity-only-animation {
+        0%   { opacity: 0; 
+            }
+            
+    100% { opacity: 1; 
+        }
+    }
+    @-o-keyframes fade-in-opacity-only-animation {
+        0%   { opacity: 0; 
+           }
+            
+    100% { opacity: 1; 
+        }
+    }
+    @keyframes fade-in-opacity-only-animation {
+        0%   { opacity: 0; 
+            }
+            
+    100% { opacity: 1; 
+        }
+    }
+
 
     ${'' /* fade in icon */}
     @-webkit-keyframes fade-in-icon {
