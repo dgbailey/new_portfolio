@@ -107,7 +107,7 @@ export class GlobalTopContainer extends Component{
             let innerWindowSize = window.innerHeight
 
             if(elDistFromTop < innerWindowSize){
-                element.classList.add("fade-in-icon")
+                element.classList.add("fade-up")
             }
 
 
@@ -152,7 +152,7 @@ export class GlobalTopContainer extends Component{
                         <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
                         <div className="under-carousel-description-cont">
                         <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
-                            Historically, the organization's customer data was tracked with paper records. I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience.</p>
+                            Project scope was the largest concern among the team, ultimately resulting in the prioritization of extensibility within a reduced scope over a full feature set. I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
                                     <div className="icon-position-container">
@@ -192,8 +192,8 @@ export class GlobalTopContainer extends Component{
                         
                         <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
                         <div className="under-carousel-description-cont">
-                            <p className="ucd-paragraph">Flocks analyzes the toxcicity of Twitter topics. The front end leveraged the Twitter API to facilitate searches of trending topics and to display tweets processed by the toxcicity algorithm.  Flocks was also intended to serve as a visualization tool for relevant statistics. The team included four data science students + Google's open source natural language processing (BERT) and
-                            one backend engineer.  The Sentiment API is still in progress. I was responsible for the entire front end component architecture and design.</p>
+                            <p className="ucd-paragraph">Flocks analyzes the toxcicity of tweets. The front end leveraged the Twitter API to facilitate searches of <a href="https://github.com/flocks1/login/blob/master/src/components/ItemList.js">trending topics</a> and to display tweets processed by the toxcicity algorithm.  Pace was a major challenge during this project as there were only three real coding days.  Consequently, sourcing and <a href ="https://github.com/flocks1/login/blob/master/src/components/DataVisVue.js">integrating</a> with third party data visualization components was an essential compromise. The team included four data science students + Google's open source natural language processing (BERT) and
+                            one backend engineer in Germany.  The Sentiment API is still in progress. I was responsible for the entire front end component architecture and design.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
                                     <div className="icon-position-container">
@@ -453,21 +453,23 @@ const StyledGlobalTopContainer = styled.section`
         margin: 0px 0px 20px;
 
         text-align: center;
-        -webkit-animation: fade-in-animation 1s ease; /* Safari 4+ */
-        -moz-animation:    fade-in-animation 1s ease; /* Fx 5+ */
-        -o-animation:      fade-in-animation 1s ease; /* Opera 12+ */
-        animation:         fade-in-animation 1s ease; /* IE 10+, Fx 29+ */
+        -webkit-animation: fade-in-animation 1s both; /* Safari 4+ */
+        -moz-animation:    fade-in-animation 1s both; /* Fx 5+ */
+        -o-animation:      fade-in-animation 1s both; /* Opera 12+ */
+        animation:         fade-in-animation 1s both; /* IE 10+, Fx 29+ */
+
+        animation-delay:.3s;
         
     }
 
     .portfolio-sub-name{
         font-family:${theme.experimentalFont};
-       font-size: 1.6rem;
-       letter-spacing:3px;
+       font-size: 1.4rem;
+       letter-spacing:8px;
        color:#00000073;
-       padding: 5px;
+       padding: 5px 5px 10px;
        text-align: center;
-       animation:fade-in-animation 1s ease; /* IE 10+, Fx 29+ */
+       animation:transform-animation 1s ease; /* IE 10+, Fx 29+ */
 
     }
        
@@ -475,16 +477,17 @@ const StyledGlobalTopContainer = styled.section`
 
     .longer-bio{
         
-        font-size:2.8rem;
+        font-size:2.3rem;
         ${theme.globalTextFont};
         -webkit-animation: fade-in-animation 1.1s both; /* Safari 4+ */
         -moz-animation:fade-in-animation 1.1s both; /* Fx 5+ */
         -o-animation:fade-in-animation 1.1s both; /* Opera 12+ */
         animation:fade-in-animation 1.1s both; /* IE 10+, Fx 29+ */
 
+        animation-delay:.3s;
         ${'' /* https://stackoverflow.com/questions/42446163/elements-with-animation-delay-briefly-appear-before-fading-in-using-purely-css3 */}
-        transition-delay: .15s;
-        animation-delay: .15s;
+        ${'' /* transition-delay: .15s;
+        animation-delay: .15s; */}
         color: #000000a6;
         text-align: center;
         width: 600px;
@@ -564,7 +567,7 @@ const StyledGlobalTopContainer = styled.section`
         .ucd-paragraph{
             font-size: 1.75rem;
             text-align: left;
-            width: 45%;
+            width: 50%;
             color: gray;
             line-height: 2.75rem;
 
@@ -621,10 +624,10 @@ const StyledGlobalTopContainer = styled.section`
     }
 
     .fade-in{
-    -webkit-animation: fade-in-animation 1s ease; /* Safari 4+ */
-    -moz-animation:    fade-in-animation 1s ease; /* Fx 5+ */
-    -o-animation:      fade-in-animation 1s ease; /* Opera 12+ */
-    animation:         fade-in-animation 1s ease; /* IE 10+, Fx 29+ */
+    -webkit-animation: fade-in-animation 2s ease; /* Safari 4+ */
+    -moz-animation:    fade-in-animation 2s ease; /* Fx 5+ */
+    -o-animation:      fade-in-animation 2s ease; /* Opera 12+ */
+    animation:         fade-in-animation 2s ease; /* IE 10+, Fx 29+ */
     }
 
     .fade-in-opacity-only{
@@ -655,30 +658,37 @@ const StyledGlobalTopContainer = styled.section`
     animation:         fade-up-animation 1.4s ease; /* IE 10+, Fx 29+ */
     }
 
+    .transform-animation{
+    -webkit-animation: fade-up-animation 1.4s ease; /* Safari 4+ */
+    -moz-animation:    fade-up-animation 1.4s ease; /* Fx 5+ */
+    -o-animation:      fade-up-animation 1.4s ease; /* Opera 12+ */
+    animation:         fade-up-animation 1.4s ease; /* IE 10+, Fx 29+ */
+    }
+
     @-webkit-keyframes fade-in-animation {
     0%   { opacity: 0; 
-            transform:translateY(-50px)}
+            transform:translateY(-20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-moz-keyframes fade-in-animation {
         0%   { opacity: 0; 
-            transform:translateY(-50px)}
+            transform:translateY(-20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-o-keyframes fade-in-animation {
         0%   { opacity: 0; 
-            transform:translateY(-50px)}
+            transform:translateY(-20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @keyframes fade-in-animation {
         0%   { opacity: 0; 
-            transform:translateY(-50px)}
+            transform:translateY(-20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
@@ -804,6 +814,38 @@ const StyledGlobalTopContainer = styled.section`
             
     100% { opacity: 1; 
         transform:translateY(0px)}
+    }
+
+    ${'' /* transform animation */}
+
+    ${'' /* fadeup-delay */}
+    @-webkit-keyframes transform-animation {
+    0%   { opacity: 0; 
+            transform:scale(0.8)}
+            
+    100% { opacity: 1; 
+        transform:scale(1)}
+    }
+    @-moz-keyframes transform-animation {
+        0%   { opacity: 0; 
+            transform:scale(0.8)}
+            
+    100% { opacity: 1; 
+        transform:scale(1)}
+    }
+    @-o-keyframes transform-animation {
+        0%   { opacity: 0; 
+            transform:scale(0.8)}
+            
+    100% { opacity: 1; 
+        transform:scale(1)}
+    }
+    @keyframes transform-animation {
+        0%   { opacity: 0; 
+            transform:scale(0.8)}
+            
+    100% { opacity: 1; 
+        transform:scale(1)}
     }
     
 
