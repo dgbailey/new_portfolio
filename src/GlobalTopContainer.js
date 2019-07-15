@@ -336,7 +336,7 @@ const StyledGlobalTopContainer = styled.section`
             display: flex;
             text-align:left;
             flex-direction: column;
-            margin-top: 5%;
+            margin: 5% 0%;
             @media(max-width:1000px){
                font-size:4rem;
             
@@ -395,15 +395,20 @@ const StyledGlobalTopContainer = styled.section`
 
     }
     .parallax__layer--b {
-        margin-top: -12%;
+    margin-top: -5%;
     transform: translateZ(0);
     ${'' /* display: inline-block; */}
     white-space: normal;
     display:flex;
     align-items:center;
-   
+    
     justify-content:center;
     flex-direction:column;
+
+    @media(max-width:590px){
+        margin-top: -12%;
+    }
+        
 ${'' /* 
         .front-end-description-container{
             width:70vw;
@@ -484,7 +489,7 @@ ${'' /*
         height:100%;
         border-bottom: 1px solid lightgray;
 
-        padding-bottom: 30px;
+        padding-bottom: 60px;
        @media(max-width:590px){
         width: 82vw;
 

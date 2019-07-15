@@ -39,8 +39,8 @@ export class ProductCarousel extends Component{
             <StyledProductCarousel>
                 
                 <StyledBtnDiv className="btn-div">
-                    <button className="increment-btn" onClick={this.increment}>Next</button>
-                    <button className="decrement-btn" onClick={this.decrement}>Prev</button>
+                    <button className="increment-btn" onClick={this.increment}><i class="fas fa-chevron-left"></i></button>
+                    <button className="decrement-btn" onClick={this.decrement}><i class="fas fa-chevron-right"></i></button>
                 </StyledBtnDiv>
         
                 {this.props.imageArray.map(
@@ -75,9 +75,11 @@ const StyledProductCarousel = styled.div`
     align-items:flex-end;
     transform: ${props => props.theme.scaling};
     transform-origin: ${props => props.theme.origin};
+    position:relative;
     
     .btn-div{
         margin-bottom:20px;
+        
     }
   
     .feature{
@@ -95,7 +97,48 @@ const StyledProductCarousel = styled.div`
 const StyledBtnDiv = styled.div`
 
     display:flex;
-    justify-content:flex-end;
 
+  
+   background: #80808017;
+    border-radius: 10%;
+   
     
+    button{
+       
+        z-index:3;
+        background: Transparent;
+        
+        
+        display:flex;
+        border:none
+        align-items:center;
+
+        
+
+        font-size: 2rem;
+        transition:.5s ease;
+
+        justify-content:center;
+
+        i{
+            color:#929292;
+        }
+        
+        &:hover{
+            cursor:pointer;
+            background:lightgreen;
+
+        }
+
+        .increment-btn{
+            position:absolute;
+            right:100%;
+            
+        }
+        .decrement-btn{
+            position:absolute;
+            left:100%;
+           
+        }
+    }
 `
