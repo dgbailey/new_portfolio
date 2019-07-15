@@ -131,7 +131,7 @@ export class GlobalTopContainer extends Component{
                         <h2 className="portfolio-sub-name">FULL STACK ENGINEER</h2>
                         <h1 className="portfolio-name">Dustin Bailey</h1>
                                         
-                        <p className="longer-bio">A developer with immense appreciation for beautiful design throughout the technical stack.
+                        <p className="longer-bio">Always seeking & appreciating beautiful design throughout the technical stack.
                             Currently residing in San Francisco.
                                             
                         </p>
@@ -141,18 +141,21 @@ export class GlobalTopContainer extends Component{
                 <div  className="parallax__layer parallax__layer--a">
                     <div className="front-end-description-container">
                         <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
-                        <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM</strong> <div className="big-overview-text"> <strong>React & Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
                         
                     </div>
                 </div>
                 <div className="parallax__layer parallax__layer--c">
                     
                     <div className="content-container full">
+                    <div className="front-end-description-container">
                         
+                        <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM</strong> <div className="big-overview-text"> <strong>React & Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
+                        
+                    </div>
                         <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
                         <div className="under-carousel-description-cont">
                         <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
-                            Project scope was the largest concern among the team, ultimately resulting in the prioritization of extensibility within a reduced scope over a full feature set. I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
+                            Project scope was the largest concern among the team, ultimately resulting in the prioritization of extensibility within a reduced scope over a full feature set. <br></br><br></br>I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
                                     <div className="icon-position-container">
@@ -300,10 +303,43 @@ const StyledGlobalTopContainer = styled.section`
     .parallax__layer {
     
     width: 100%;
-   
-    
     vertical-align: middle;
     white-space: normal;
+    .front-end-description-container{
+        display:flex;
+        flex-direction:column;
+        width:943.6px;
+        max-width:997px;
+        border-radius: 4px;
+
+            @media(max-width:1000px){
+                width:70vw;
+            
+            }
+
+            @media(max-width:589px){
+                width: 82vw;
+
+                margin: 0px;
+            }
+
+        .text{
+            font-size: 4.2rem;
+            width: 700px;
+            display: flex;
+            text-align:left;
+            flex-direction: column;
+            margin-top: 5%;
+            @media(max-width:1000px){
+               font-size:4rem;
+            
+            }
+            @media(max-width:589px){
+                    font-size:2.4rem;
+                }
+
+        }
+    }
     ${'' /* transform-style:preserve-3d; */}
     
     }
@@ -329,18 +365,7 @@ const StyledGlobalTopContainer = styled.section`
     margin-top:7%;
     justify-content:center;
     flex-direction:column;
-    .front-end-description-container{
-        display:flex;
-        flex-direction:column;
-        width:70vw;
-        .text{
-            font-size: 5rem;
-            width: 700px;
-            display: flex;
-            flex-direction: column;
-            margin-top: 5%;
-        }
-    }
+   
 
     }
     .parallax__layer--b {
@@ -353,7 +378,7 @@ const StyledGlobalTopContainer = styled.section`
    
     justify-content:center;
     flex-direction:column;
-
+${'' /* 
         .front-end-description-container{
             width:70vw;
             justify-content:flex-start;
@@ -365,17 +390,18 @@ const StyledGlobalTopContainer = styled.section`
                 margin-top: 5%;
             }
         
-        }
+        } */}
     }
 
     .parallax__layer--c {
-    margin-top: 4%;
+   
     transform: translateZ(60px) scale(.8);
     ${'' /* display: inline-block; */}
     white-space: normal;
     display:flex;
     align-items:flex-end;
-    top:3vh;
+    transform-origin: 50% 10%;
+    
     position:relative;
     justify-content: center;
     flex-direction:column;
@@ -399,7 +425,7 @@ const StyledGlobalTopContainer = styled.section`
         flex-direction:column;
         align-items:center;
         
-        .front-end-description-container{
+        ${'' /* .front-end-description-container{
             width:70vw;
             justify-content:flex-start;
             .text{
@@ -410,7 +436,7 @@ const StyledGlobalTopContainer = styled.section`
                 margin-top: 5%;
             }
         
-        }
+        } */}
     
 
     
@@ -433,7 +459,10 @@ const StyledGlobalTopContainer = styled.section`
         border-bottom: 1px solid lightgray;
 
         padding-bottom: 30px;
-       
+       @media(max-width:590px){
+        width: 82vw;
+
+       }
     }
 
     .scroll-content-container{
@@ -443,7 +472,11 @@ const StyledGlobalTopContainer = styled.section`
         display:flex;
         flex-direction:column;
         justify-content:center;
+        align-items:center;
         height:400px;
+        @media(max-width:590px){
+            width: 82vw;
+        }
     }
     .portfolio-name{
         font-family:${theme.largeFont};
@@ -459,7 +492,9 @@ const StyledGlobalTopContainer = styled.section`
         animation:         fade-in-animation 1s both; /* IE 10+, Fx 29+ */
 
         animation-delay:.3s;
-        
+        @media (max-width:590px){
+            font-size: 5rem;
+        }
     }
 
     .portfolio-sub-name{
@@ -470,14 +505,18 @@ const StyledGlobalTopContainer = styled.section`
        padding: 5px 5px 10px;
        text-align: center;
        animation:transform-animation 1s ease; /* IE 10+, Fx 29+ */
+       width: 357.14px;
 
+        @media (max-width:590px){
+            font-size: 1.05rem;
+        }
     }
        
     
 
     .longer-bio{
         
-        font-size:2.3rem;
+        font-size:2rem;
         ${theme.globalTextFont};
         -webkit-animation: fade-in-animation 1.1s both; /* Safari 4+ */
         -moz-animation:fade-in-animation 1.1s both; /* Fx 5+ */
@@ -488,10 +527,16 @@ const StyledGlobalTopContainer = styled.section`
         ${'' /* https://stackoverflow.com/questions/42446163/elements-with-animation-delay-briefly-appear-before-fading-in-using-purely-css3 */}
         ${'' /* transition-delay: .15s;
         animation-delay: .15s; */}
-        color: #000000a6;
+        color: #0000006b;
         text-align: center;
-        width: 600px;
-        padding:0px 40px;
+        width: 357.14px;
+       
+
+        @media (max-width:590px){
+            padding:0px 22px;
+            width:100%;
+            font-size:1.4rem;
+        }
        
 
         
@@ -524,6 +569,8 @@ const StyledGlobalTopContainer = styled.section`
             width:100%;
             justify-content:space-between;
             margin:2vh;
+
+
             
 
             .front-end-project{
@@ -531,24 +578,31 @@ const StyledGlobalTopContainer = styled.section`
             }
 
             .title{
-                font-size: 5rem;
+                font-size: 7rem;
+                @media(max-width:1000px){
+                    font-size:6rem;
+                }
+                @media(max-width:589px){
+                    font-size:4rem;
+                }
 
 
             }
-            .text{
-                font-size: 3.5rem;
+            ${'' /* .text{
+                font-size: 4.5rem;
                 color: #000000c2;
                 
 
                 text-align: left;
 
                 width: 500px;
-            }
+            } */}
 
             
     }
     .strong-title{
         color:black;
+        
         
     }
 
@@ -563,6 +617,15 @@ const StyledGlobalTopContainer = styled.section`
         width: 60vw;
         margin-top: 7%;
         overflow:hidden;
+        @media(max-width:1000px){
+            width: 70vw;
+            flex-direction:column;
+
+        }
+
+        @media(max-width:590px){
+            width: 100%;
+        }
 
         .ucd-paragraph{
             font-size: 1.75rem;
@@ -571,7 +634,12 @@ const StyledGlobalTopContainer = styled.section`
             color: gray;
             line-height: 2.75rem;
 
+            @media(max-width:1000px){
             
+            flex-direction:column;
+            width:100%;
+            
+        }
         }
 
         .ucd-infographic {
@@ -580,6 +648,17 @@ const StyledGlobalTopContainer = styled.section`
             display:grid;
             grid-template-columns:repeat(2,auto);
             grid-template-row:repeat(2,auto);
+            height: 300px;
+
+            @media(max-width:1000px){
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 10%;
+                flex-wrap:wrap;
+
+}
+            }
             
         }
 
@@ -604,6 +683,11 @@ const StyledGlobalTopContainer = styled.section`
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            @media(max-width:590px){
+                align-items: center;
+
+                width: 50%;
+            }
 
         }
 

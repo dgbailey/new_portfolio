@@ -46,9 +46,22 @@ const StyledTopPageGraphicsContainer = styled.div`
         
         .product-image{
             box-shadow: -12px 11px 27px 0px rgba(0,0,0,0.3);
-            width: 70vw;
+            width:943.6px;
+            max-width:997px;
             border-radius: 4px;
+
+            @media(max-width:1000px){
+                width:70vw;
+            }
+
+            @media(max-width:590px){
+            width: 100%;
+
+       }
+
         }
+
+
         
        
 
