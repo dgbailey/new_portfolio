@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import styled from "styled-components";
 
 import ImageStylingContainer from "./ImageStylingContainer";
+import {ImageCountVisual} from "./ImageCountVisual";
 
 export class ProductCarousel extends Component{
     constructor(props){
@@ -39,8 +40,8 @@ export class ProductCarousel extends Component{
             <StyledProductCarousel>
                 
                 <StyledBtnDiv className="btn-div">
-                    <button className="increment-btn" onClick={this.increment}><i class="fas fa-chevron-left"></i></button>
-                    <button className="decrement-btn" onClick={this.decrement}><i class="fas fa-chevron-right"></i></button>
+                    <button className="increment-btn" onClick={this.decrement}><i class="fas fa-chevron-left"></i></button>
+                    <button className="decrement-btn" onClick={this.increment}><i class="fas fa-chevron-right"></i></button>
                 </StyledBtnDiv>
         
                 {this.props.imageArray.map(
@@ -52,8 +53,9 @@ export class ProductCarousel extends Component{
                     />)}
 
                 
-            
+                <ImageCountVisual imageArray={this.props.imageArray} currentPage={this.state.currentPage}/>
             </StyledProductCarousel>
+            
 
         )
     }
@@ -79,7 +81,9 @@ const StyledProductCarousel = styled.div`
     
     .btn-div{
         margin-bottom:20px;
-        
+        @media(max-width:590px){
+            display:none;
+        }
     }
   
     .feature{

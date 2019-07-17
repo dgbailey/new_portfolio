@@ -135,9 +135,9 @@ export class GlobalTopContainer extends Component{
                             <p>San Francisco, CA</p>
 
                             <div className="contact-icon-container">
-                                <a href="mailto:bailey.dust@gmail.com?subject=Saw Your Portfolio"><i class="fas fa-envelope"></i></a>
-                                <a href="https://github.com/dgbailey"><i class="fab fa-github-alt"></i></a>
-                                <a href="https://www.linkedin.com/in/dustin-bailey-758ab195/"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:bailey.dust@gmail.com?subject=Saw Your Portfolio" ><i class="fas fa-envelope"></i></a>
+                                <a href="https://github.com/dgbailey" target="_blank"><i class="fab fa-github-alt"></i></a>
+                                <a href="https://www.linkedin.com/in/dustin-bailey-758ab195/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                                             
                         </div>
@@ -159,7 +159,7 @@ export class GlobalTopContainer extends Component{
                         <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM</strong> <div className="big-overview-text"> <strong>React & Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
                         
                     </div>
-                        <ProductCarousel imageArray={["tieme_mark_s","tieme_click_s","tieme_home_s"]}/>
+                        <ProductCarousel imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
                         <div className="under-carousel-description-cont">
                         <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
                             Project scope was the largest concern for the team, ultimately resulting in the prioritization of code extensibility over a full feature set. <br></br><br></br>I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
@@ -177,8 +177,10 @@ export class GlobalTopContainer extends Component{
                                     </div>
                                 </div>
                                 <div className="icon-container">
-                                    <div className="ucd-icon"></div>
-                                    <div className="ucd-icon-description"></div>
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                        <div className="ucd-icon-description">Website.</div>
+                                    </div>
                                 </div>
                                 
                                 <div className="icon-container">
@@ -203,7 +205,7 @@ export class GlobalTopContainer extends Component{
                         <ProductCarousel imageArray={["flocks_s","flocks_g_s"]}/>
                         <div className="under-carousel-description-cont">
                             <p className="ucd-paragraph">Flocks analyzes the toxcicity of tweets. The front end leveraged the Twitter API to facilitate searches of <a href="https://github.com/flocks1/login/blob/master/src/components/ItemList.js">trending topics</a> and to display tweets processed by the toxcicity algorithm.  Pace was a major challenge during this project as there were only three real coding days.  Consequently, sourcing and <a href ="https://github.com/flocks1/login/blob/master/src/components/DataVisVue.js">integrating</a> with third party data visualization components was an essential compromise. The team included four data science students + Google's open source natural language processing (BERT) and
-                            one backend engineer in Germany.  The Sentiment API is still in progress. I was responsible for the entire front end component architecture and design.</p>
+                            one backend engineer.  The Sentiment API is still in progress. I was responsible for the entire front end component architecture and design.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
                                     <div className="icon-position-container">
@@ -218,8 +220,10 @@ export class GlobalTopContainer extends Component{
                                     </div>
                                 </div>
                                 <div className="icon-container">
-                                    <div className="ucd-icon"></div>
-                                    <div className="ucd-icon-description"></div>
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                        <div className="ucd-icon-description">Website.</div>
+                                    </div>
                                 </div>
                                 
                                 <div className="icon-container">
@@ -228,6 +232,9 @@ export class GlobalTopContainer extends Component{
                                         <div className="ucd-icon-description">Codebase.</div>
                                     </div>
                                 </div>
+                                
+
+                                
                             </div>
                         </div>
                     </div>
@@ -258,8 +265,10 @@ export class GlobalTopContainer extends Component{
                                     </div>
                                 </div>
                                 <div className="icon-container">
-                                    <div className="ucd-icon"></div>
-                                    <div className="ucd-icon-description"></div>
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                        <div className="ucd-icon-description">Website.</div>
+                                    </div>
                                 </div>
                             
                                 <div className="icon-container">
@@ -526,6 +535,9 @@ ${'' /*
         @media (max-width:590px){
             font-size: 5rem;
         }
+        @media (max-width:570px){
+            font-size: 4.5rem;
+        }
     }
 
     .portfolio-sub-name{
@@ -582,6 +594,8 @@ ${'' /*
             font-family:${theme.largeFont};
             
             font-size: 4.2rem;
+
+            
             
             
 
@@ -615,6 +629,10 @@ ${'' /*
                 }
                 @media(max-width:589px){
                     font-size:4rem;
+                }
+
+                @media(max-width:570px){
+                    font-size:3.5xrem;
                 }
 
 
@@ -679,7 +697,7 @@ ${'' /*
             display:grid;
             grid-template-columns:repeat(2,auto);
             grid-template-row:repeat(2,auto);
-            height: 200px;
+            height: 300px;
 
             @media(max-width:1000px){
                 display: flex;
@@ -687,9 +705,15 @@ ${'' /*
                 justify-content: space-between;
                 margin-top: 10%;
                 flex-wrap:wrap;
+                height: 200px;
 
-}
+
             }
+            @media(max-width:1000px){
+                height:250px;
+            }
+
+           
             
         }
 
@@ -697,6 +721,10 @@ ${'' /*
             display:inline-block;
             
             padding-bottom:4px;
+
+            i{
+                font-size:4.2rem;
+            }
 
             h1{
                 font-size:4.2rem;
@@ -714,6 +742,7 @@ ${'' /*
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            padding-bottom:20px;
             @media(max-width:590px){
                 align-items: center;
 
