@@ -666,6 +666,7 @@ ${'' /*
         width: 60vw;
         margin-top: 7%;
         overflow:hidden;
+        max-width: 947px;
         @media(max-width:1000px){
             width: 70vw;
             flex-direction:column;

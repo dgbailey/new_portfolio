@@ -130,7 +130,7 @@ const StyledBtnDiv = styled.div`
         
         &:hover{
             cursor:pointer;
-            background:lightgreen;
+            background:lightgray;
 
         }
 
