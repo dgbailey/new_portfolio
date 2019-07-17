@@ -46,7 +46,7 @@ export class ProductCarousel extends Component{
         
                 {this.props.imageArray.map(
                     (image,index) => 
-                    <ImageStylingContainer top={this.props.top}
+                    <ImageStylingContainer onClick={this.increment} top={this.props.top}
                     key={index} id={index} 
                     image={image}
                     currentPage={this.state.currentPage}
