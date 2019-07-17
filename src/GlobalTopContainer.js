@@ -176,23 +176,27 @@ export class GlobalTopContainer extends Component{
                                         <div className="ucd-icon-description"> Project weeks.</div>
                                     </div>
                                 </div>
-                                <a href="http://tiemendocrm.com/" target="_blank">
-                                    <div className="icon-container">
-                                        <div className="icon-position-container">
-                                            <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                            <div className="ucd-icon-description">Website.</div>
-                                        </div>
-                                    </div>
-                                </a>
                                 
-                                <a href="https://github.com/labs13-agriculture" target="_blank">
                                     <div className="icon-container">
-                                        <div className="icon-position-container">
-                                            <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                            <div className="ucd-icon-description">Codebase.</div>
-                                        </div>
+                                    <a href="http://tiemendocrm.com/" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                                <div className="ucd-icon-description">Website.</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
+                                
+                                
+                               
+                                    <div className="icon-container">
+                                        <a href="https://github.com/labs13-agriculture" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                                <div className="ucd-icon-description">Codebase.</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -224,23 +228,27 @@ export class GlobalTopContainer extends Component{
                                     </div>
                                 </div>
 
-                                <a href="https://getflocks.herokuapp.com/register" target="_blank">
-                                    <div className="icon-container">
-                                        <div className="icon-position-container">
-                                            <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                            <div className="ucd-icon-description">Website.</div>
-                                        </div>
-                                    </div>
-                                </a>
                                 
-                                <a href="https://github.com/flocks1/login" target="_blank">
                                     <div className="icon-container">
-                                        <div className="icon-position-container">
-                                            <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                            <div className="ucd-icon-description">Codebase.</div>
-                                        </div>
+                                    <a href="https://getflocks.herokuapp.com/register" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                                <div className="ucd-icon-description">Website.</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
+                                
+                                
+                                
+                                    <div className="icon-container">
+                                    <a href="https://github.com/flocks1/login" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                                <div className="ucd-icon-description">Codebase.</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                
                                 
 
                                 
@@ -273,14 +281,16 @@ export class GlobalTopContainer extends Component{
                                         <div className="ucd-icon-description"> Project days.</div>
                                     </div>
                                 </div>
-                                <a href="https://talweg.herokuapp.com/" target="_blank">
+                                
                                     <div className="icon-container">
-                                        <div className="icon-position-container">
-                                            <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                            <div className="ucd-icon-description">Website.</div>
-                                        </div>
+                                        <a href="https://talweg.herokuapp.com/" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                                <div className="ucd-icon-description">Website.</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </a>
+                               
                             
                                 <div className="icon-container">
                                     <div className="icon-position-container">
