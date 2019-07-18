@@ -451,7 +451,7 @@ const StyledGlobalTopContainer = styled.section`
     flex-direction:column;
 
     @media(max-width:590px){
-        margin-top: -12%;
+        margin-top: 4%;
     }
         
 ${'' /* 
@@ -484,9 +484,9 @@ ${'' /*
     align-items:center;
     
     @media(max-width:590px){
-            transform: translateZ(60px) scale(.9);
+        transform: translateZ(0);
     }
-
+    
     }
 
     
@@ -506,8 +506,8 @@ ${'' /*
         align-items:center;
 
         @media(max-width:590px){
-            transform: translateZ(60px) scale(.9);
-        }
+        transform: translateZ(0);
+        }   
         
         ${'' /* .front-end-description-container{
             width:70vw;
