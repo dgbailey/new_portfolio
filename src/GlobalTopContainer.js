@@ -161,7 +161,7 @@ export class GlobalTopContainer extends Component{
                     </div>
                         <ProductCarousel imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
                         <div className="under-carousel-description-cont">
-                        <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an organization that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
+                        <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an <a href="http://tiemendo.com/cord" target="_blank">organization</a> that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
                             Project scope was the largest concern for the team, ultimately resulting in the prioritization of code extensibility over a full feature set. <br></br><br></br>I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
@@ -176,19 +176,27 @@ export class GlobalTopContainer extends Component{
                                         <div className="ucd-icon-description"> Project weeks.</div>
                                     </div>
                                 </div>
-                                <div className="icon-container">
-                                    <div className="icon-position-container">
-                                        <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                        <div className="ucd-icon-description">Website.</div>
-                                    </div>
-                                </div>
                                 
-                                <div className="icon-container">
-                                    <div className="icon-position-container">
-                                        <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                        <div className="ucd-icon-description">Codebase.</div>
+                                    <div className="icon-container">
+                                    <a href="http://tiemendocrm.com/" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                                <div className="ucd-icon-description">Website.</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>
+                                
+                                
+                               
+                                    <div className="icon-container">
+                                        <a href="https://github.com/labs13-agriculture" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                                <div className="ucd-icon-description">Codebase.</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -219,19 +227,28 @@ export class GlobalTopContainer extends Component{
                                         <div className="ucd-icon-description"> Project days.</div>
                                     </div>
                                 </div>
-                                <div className="icon-container">
-                                    <div className="icon-position-container">
-                                        <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                        <div className="ucd-icon-description">Website.</div>
-                                    </div>
-                                </div>
+
                                 
-                                <div className="icon-container">
-                                    <div className="icon-position-container">
-                                        <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                        <div className="ucd-icon-description">Codebase.</div>
+                                    <div className="icon-container">
+                                    <a href="https://getflocks.herokuapp.com/register" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                                <div className="ucd-icon-description">Website.</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>
+                                
+                                
+                                
+                                    <div className="icon-container">
+                                    <a href="https://github.com/flocks1/login" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                                <div className="ucd-icon-description">Codebase.</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                
                                 
 
                                 
@@ -264,12 +281,16 @@ export class GlobalTopContainer extends Component{
                                         <div className="ucd-icon-description"> Project days.</div>
                                     </div>
                                 </div>
-                                <div className="icon-container">
-                                    <div className="icon-position-container">
-                                        <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                        <div className="ucd-icon-description">Website.</div>
+                                
+                                    <div className="icon-container">
+                                        <a href="https://talweg.herokuapp.com/" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                                <div className="ucd-icon-description">Website.</div>
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>
+                               
                             
                                 <div className="icon-container">
                                     <div className="icon-position-container">
@@ -313,7 +334,17 @@ const StyledGlobalTopContainer = styled.section`
     height:100%;
 
     ${'' /* DUSTIN FLEXING THIS LAYER CAUSES BIG PROBS WITH PARALLAX IN SAFARI */}
+    a{
+        color: #5b2dff;
+                &:link{
+                    color: #5b2dff;
+                   
+                }
 
+
+
+                
+            }
    
    
     .parallax__layer {
@@ -377,7 +408,12 @@ const StyledGlobalTopContainer = styled.section`
         justify-content:space-between;
         a{
             text-decoration:none;
-            color:#00000042;
+            &:link{color:gray;
+            }
+
+            &:visited{
+                color:gray;
+            }
         }
         
         i{
@@ -570,7 +606,7 @@ ${'' /*
         ${'' /* https://stackoverflow.com/questions/42446163/elements-with-animation-delay-briefly-appear-before-fading-in-using-purely-css3 */}
         ${'' /* transition-delay: .15s;
         animation-delay: .15s; */}
-        color: #00000042;
+        color: gray;
         text-align: center;
         width: 357.14px;
        
@@ -666,6 +702,7 @@ ${'' /*
         width: 60vw;
         margin-top: 7%;
         overflow:hidden;
+        max-width: 947px;
         @media(max-width:1000px){
             width: 70vw;
             flex-direction:column;
@@ -687,8 +724,10 @@ ${'' /*
             
             flex-direction:column;
             width:100%;
+
+            }
             
-        }
+        
         }
 
         .ucd-infographic {
@@ -698,6 +737,15 @@ ${'' /*
             grid-template-columns:repeat(2,auto);
             grid-template-row:repeat(2,auto);
             height: 300px;
+            a{
+            text-decoration:none;
+            &:link{color:gray;
+            }
+
+            &:visited{
+                color:gray;
+            }
+        }
 
             @media(max-width:1000px){
                 display: flex;
@@ -748,6 +796,7 @@ ${'' /*
 
                 width: 50%;
             }
+            
 
         }
 

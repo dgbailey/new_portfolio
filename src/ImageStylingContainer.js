@@ -9,7 +9,7 @@ function ImageStylingContainer(props) {
         const {image,currentPage,id} = props;
         return(
             
-                <StyledTopPageGraphicsContainer className={currentPage === id ? "":"hidden"}>
+                <StyledTopPageGraphicsContainer onClick={props.onClick} className={currentPage === id ? "":"hidden"}>
             
                     
                     <div className="image-style-container">
