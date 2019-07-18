@@ -483,10 +483,12 @@ ${'' /*
     flex-direction:column;
     align-items:center;
     
-    
+    @media(max-width:590px){
+            transform: translateZ(60px) scale(.9);
+        }
 
     
-    }
+    
 
     .parallax__layer--d{
         margin-top: 4%;
@@ -500,6 +502,10 @@ ${'' /*
         justify-content: center;
         flex-direction:column;
         align-items:center;
+
+        @media(max-width:590px){
+            transform: translateZ(60px) scale(.9);
+        }
         
         ${'' /* .front-end-description-container{
             width:70vw;
