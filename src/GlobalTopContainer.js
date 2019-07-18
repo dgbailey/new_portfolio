@@ -451,7 +451,7 @@ const StyledGlobalTopContainer = styled.section`
     flex-direction:column;
 
     @media(max-width:590px){
-        margin-top: 4%;
+        margin-top: 15%;
     }
         
 ${'' /* 
@@ -507,7 +507,10 @@ ${'' /*
 
         @media(max-width:590px){
         transform: translateZ(0);
-        }   
+        
+        margin-top: 15%;
+        }
+        
         
         ${'' /* .front-end-description-container{
             width:70vw;
