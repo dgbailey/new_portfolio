@@ -8,10 +8,17 @@ export class GlobalTopContainer extends Component{
 
     
     componentDidMount(){
-        document.addEventListener('scroll', this.dropTextAndOpacity,true)
-        document.addEventListener('scroll', this.titleTextAndOpacity,true)
-        document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
-        document.addEventListener('scroll', this.uCdTextAndOpacity,true)
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            // what you want to run in mobile
+
+        }
+        else{
+            document.addEventListener('scroll', this.dropTextAndOpacity,true)
+            document.addEventListener('scroll', this.titleTextAndOpacity,true)
+            document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
+            document.addEventListener('scroll', this.uCdTextAndOpacity,true)
+        }
+        
         // adding true here was extremely important
     }
     
@@ -135,7 +142,7 @@ export class GlobalTopContainer extends Component{
                             <p>San Francisco, CA</p>
 
                             <div className="contact-icon-container">
-                                <a href="mailto:bailey.dust@gmail.com?subject=Saw Your Portfolio" ><i class="fas fa-envelope"></i></a>
+                                <a href="mailto:bailey.dust@gmail.com?subject=Saw Your Portfolio" ><i class="fas fa-at"></i></a>
                                 <a href="https://github.com/dgbailey" target="_blank"><i class="fab fa-github-alt"></i></a>
                                 <a href="https://www.linkedin.com/in/dustin-bailey-758ab195/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                             </div>
@@ -406,14 +413,30 @@ const StyledGlobalTopContainer = styled.section`
         display:flex:
         width:300px;
         justify-content:space-between;
+
+        margin:10px;
+
+        @media(max-width:590){
+             
+                
+                margin:10px;
+        }
+        
         a{
             text-decoration:none;
-            &:link{color:gray;
+                    
+           
+
+            &:link{color:#dcdcdc;
             }
 
             &:visited{
-                color:gray;
+                color:#dcdcdc;
             }
+
+           
+
+            
         }
         
         i{
@@ -423,9 +446,13 @@ const StyledGlobalTopContainer = styled.section`
                 transition:.5s ease;
                 color:gray;
             }
+            @media(max-width:590px){
+                font-size: 3rem;
+                color:#dcdcdc;
+            }
         }
     }
-    }
+}
     .parallax__layer--a {
     transform: translateZ(0);
     
@@ -569,6 +596,7 @@ ${'' /*
         font-family:${theme.largeFont};
         font-size: 8rem;
         font-weight:500;
+        
 
         margin: 0px 0px 20px;
 
@@ -580,10 +608,12 @@ ${'' /*
 
         animation-delay:.3s;
         @media (max-width:590px){
-            font-size: 5rem;
+            font-size: 5.2rem;
+            width:100%;
         }
         @media (max-width:570px){
             font-size: 4.5rem;
+            
         }
     }
 
