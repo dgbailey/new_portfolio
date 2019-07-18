@@ -485,7 +485,9 @@ ${'' /*
     
     @media(max-width:590px){
             transform: translateZ(60px) scale(.9);
-        }
+    }
+
+    }
 
     
     
