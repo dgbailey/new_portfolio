@@ -3,21 +3,22 @@ import styled from "styled-components";
 import {theme} from "./config";
 import {ProductCarousel} from "./ProductCarousel";
 
+
 export class GlobalTopContainer extends Component{
 
 
     
     componentDidMount(){
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-            // what you want to run in mobile
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        //     // what you want to run in mobile
 
-        }
-        else{
+        // }
+        
             document.addEventListener('scroll', this.dropTextAndOpacity,true)
             document.addEventListener('scroll', this.titleTextAndOpacity,true)
             document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
-        }
+        
         
         // adding true here was extremely important
     }
@@ -48,6 +49,8 @@ export class GlobalTopContainer extends Component{
     
         
     }
+
+    
 
     titleTextAndOpacity = (e) => {
         
@@ -133,19 +136,16 @@ export class GlobalTopContainer extends Component{
 
         return(
             <StyledGlobalTopContainer>
+                {/* <Nav/> */}
                 <div className="parallax__layer parallax__layer--intro">
                     <div className="scroll-content-container">
                         <h2 className="portfolio-sub-name">FULL STACK ENGINEER</h2>
-                        <h1 className="portfolio-name">Dustin Bailey</h1>
+                        <h1 className="portfolio-name">Documenting the detail.</h1>
                                         
                         <div className="longer-bio">
-                            <p>San Francisco, CA</p>
+                            <p>Dustin is a developer living in San Francisco.  He believes that small details make a large difference in the quality we perceive in people and things that surround us.  He hopes to continually learn, appreciate, and perhaps even contribute to some of those details.</p>
 
-                            <div className="contact-icon-container">
-                                <a href="mailto:bailey.dust@gmail.com?subject=Saw Your Portfolio" ><i class="fas fa-at"></i></a>
-                                <a href="https://github.com/dgbailey" target="_blank"><i class="fab fa-github-alt"></i></a>
-                                <a href="https://www.linkedin.com/in/dustin-bailey-758ab195/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                            
                                             
                         </div>
                       
@@ -330,6 +330,8 @@ export class GlobalTopContainer extends Component{
 
 const StyledGlobalTopContainer = styled.section`
 
+${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing */}
+
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
@@ -444,7 +446,7 @@ const StyledGlobalTopContainer = styled.section`
             &:hover{
                 cursor:pointer;
                 transition:.5s ease;
-                color:gray;
+                color:#5f5f5f;
             }
             @media(max-width:590px){
                 font-size: 3rem;
@@ -498,21 +500,22 @@ ${'' /*
 
     .parallax__layer--c {
    
-    transform: translateZ(60px) scale(.8);
-    ${'' /* display: inline-block; */}
-    white-space: normal;
-    display:flex;
-    align-items:flex-end;
-    transform-origin: 50% 25%;
+        transform: translateZ(60px) scale(.8);
+        ${'' /* display: inline-block; */}
+        white-space: normal;
+        display:flex;
+        align-items:flex-end;
+        transform-origin: 50% 25%;
+        
+        position:relative;
+        justify-content: center;
+        flex-direction:column;
+        align-items:center;
     
-    position:relative;
-    justify-content: center;
-    flex-direction:column;
-    align-items:center;
-    
-    @media(max-width:590px){
-        transform: translateZ(0);
-    }
+        @media(max-width:590px){
+            transform: translateZ(0);
+            margin-top: 10%;
+        }
     
     }
 
@@ -598,7 +601,7 @@ ${'' /*
         font-weight:500;
         
 
-        margin: 0px 0px 20px;
+        margin: 20px 0px 20px;
 
         text-align: center;
         -webkit-animation: fade-in-animation 1s both; /* Safari 4+ */
@@ -619,7 +622,7 @@ ${'' /*
 
     .portfolio-sub-name{
         font-family:${theme.experimentalFont};
-       font-size: 1.4rem;
+        font-size: 1.7rem;
        letter-spacing:8px;
        color:#00000073;
        padding: 5px 5px 10px;
@@ -636,20 +639,22 @@ ${'' /*
 
     .longer-bio{
         
-        font-size:1.7rem;
+        font-size:2.5rem;
         ${theme.globalTextFont};
-        -webkit-animation: fade-in-animation 1.1s both; /* Safari 4+ */
-        -moz-animation:fade-in-animation 1.1s both; /* Fx 5+ */
-        -o-animation:fade-in-animation 1.1s both; /* Opera 12+ */
-        animation:fade-in-animation 1.1s both; /* IE 10+, Fx 29+ */
+        -webkit-animation: fade-in-animation 1.3s both; /* Safari 4+ */
+        -moz-animation:fade-in-animation 1.3s both; /* Fx 5+ */
+        -o-animation:fade-in-animation 1.3s both; /* Opera 12+ */
+        animation:fade-in-animation 1.3s both; /* IE 10+, Fx 29+ */
 
-        animation-delay:.3s;
+        animation-delay:.5s;
         ${'' /* https://stackoverflow.com/questions/42446163/elements-with-animation-delay-briefly-appear-before-fading-in-using-purely-css3 */}
         ${'' /* transition-delay: .15s;
         animation-delay: .15s; */}
-        color: gray;
+        color: #5f5f5f;
         text-align: center;
-        width: 357.14px;
+        width: 853px;
+
+}
        
 
         @media (max-width:590px){
@@ -733,7 +738,7 @@ ${'' /*
     }
 
     .elevator-line{
-        color:gray;
+        color:#5f5f5f;
         
     }
 
@@ -758,7 +763,7 @@ ${'' /*
             font-size: 1.75rem;
             text-align: left;
             width: 50%;
-            color: gray;
+            color: #5f5f5f;
             line-height: 2.75rem;
 
             @media(max-width:1000px){
@@ -772,7 +777,7 @@ ${'' /*
         }
 
         .ucd-infographic {
-            color:gray;
+            color:#5f5f5f;
             width: 45%;
             display:grid;
             grid-template-columns:repeat(2,auto);
@@ -780,11 +785,11 @@ ${'' /*
             height: 300px;
             a{
             text-decoration:none;
-            &:link{color:gray;
+            &:link{color:#5f5f5f;
             }
 
             &:visited{
-                color:gray;
+                color:#5f5f5f;
             }
         }
 
