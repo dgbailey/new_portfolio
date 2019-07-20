@@ -9,7 +9,7 @@ export const Nav = () => {
         <StyledNavigation>
             <div className="nav-width-container">
                 <div className="nav-portfolio-name">Dustin Bailey</div>
-                <button className="contact-btn">Contact</button>
+                <button className="contact-btn"><span>Contact</span><i class="fas fa-bars"></i></button>
             </div>
         </StyledNavigation>
     )
@@ -40,6 +40,9 @@ const StyledNavigation = styled.nav`
         max-width: 938px;
         display:flex;
         justify-content:space-between;
+        @media(max-width:590px){
+            padding: 10px 30px;
+        }
     }
 
     .nav-portfolio-name{
@@ -57,6 +60,7 @@ const StyledNavigation = styled.nav`
     .contact-btn{
         border:none;
         background:Transparent;
+        padding:0px;
         
         
         font-size: 1.4rem;
@@ -65,6 +69,36 @@ const StyledNavigation = styled.nav`
         &:hover{
             cursor:pointer;
         }
+
+        span{
+            display:none;
+            
+            @media(min-width:590px){
+            
+
+                display:inline-block;
+            }
+        
+
+        }
+       
+
+        .fas.fa-bars{
+            display:inline-block;
+            font-size:2rem;
+
+            @media(min-width:590px){
+                
+
+                display:none;
+            }
+            
+        }
+
+                
+        
+
+        
     }
 
 `

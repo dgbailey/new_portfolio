@@ -143,7 +143,7 @@ export class GlobalTopContainer extends Component{
                         <h1 className="portfolio-name">Documenting the detail.</h1>
                                         
                         <div className="longer-bio">
-                            <p>Dustin is a developer living in San Francisco.  He believes that small details make a large difference in the quality we perceive in people and things that surround us.  He hopes to continually learn, appreciate, and perhaps even contribute to some of those details.</p>
+                            <p>Dustin is a developer living in San Francisco.  He believes that small details make all the difference in the quality we perceive in the people and things that surround us.  <span className="hidden-mobile">He hopes to continually learn, appreciate, and perhaps even contribute to some of those details.</span></p>
 
                             
                                             
@@ -409,7 +409,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     justify-content:center;
     flex-direction:column;
     
-    background: #f7f6f6;
+    background: #f7f7f7;
 
     .contact-icon-container{
         display:flex:
@@ -599,6 +599,7 @@ ${'' /*
         font-family:${theme.largeFont};
         font-size: 8rem;
         font-weight:500;
+        color:black;
         
 
         margin: 20px 0px 20px;
@@ -621,17 +622,19 @@ ${'' /*
     }
 
     .portfolio-sub-name{
+        
         font-family:${theme.experimentalFont};
         font-size: 1.7rem;
        letter-spacing:8px;
-       color:#00000073;
+       color:#5f5f5f;
        padding: 5px 5px 10px;
        text-align: center;
        animation:transform-animation 1s ease; /* IE 10+, Fx 29+ */
-       width: 357.14px;
-
+      
         @media (max-width:590px){
-            font-size: 1.05rem;
+            
+            font-size: 1.3rem;
+           
         }
     }
        
@@ -653,15 +656,22 @@ ${'' /*
         color: #5f5f5f;
         text-align: center;
         width: 853px;
+        line-height: 3.5rem;
+
+        @media(max-width:590px){
+           
+           width:100%;
+           font-size:1.7rem;
+           line-height: 2.5rem;
+           .hidden-mobile{
+               display:none;
+           }
+       }
 
 }
        
 
-        @media (max-width:590px){
-            padding:0px 22px;
-            width:100%;
-            font-size:1.7rem;
-        }
+       
        
 
         
