@@ -24,17 +24,17 @@ export class GlobalTopContainer extends Component{
     }
 
     
-    scrollToProjects = () => {
+    scrollToProjects(){
+       
         
-        let elementList = document.querySelector("#project-quick-anchor");
-        let elDistFromTop;
-        elementList.forEach( element => {
+        let element = document.querySelector("#project-quick-anchor");
+        let elDistFromTop = element.getBoundingClientRect().top
+        console.log(elDistFromTop)
 
-            let elDistFromTop = element.getBoundingClientRect().top
-           
-        })
+        window.scroll(0,elDistFromTop)
+        
 
-        window.scroll(elDistFromTop)
+       
 
     }
 
@@ -160,7 +160,7 @@ export class GlobalTopContainer extends Component{
                             <p>Dustin is a developer living in San Francisco.  He believes that small details make all the difference in the quality we perceive in the people and things that surround us.  <span className="hidden-mobile">He hopes to continually learn, appreciate, and perhaps even contribute to some of those details.</span></p>
 
                             
-                            <a href="" onClick={this.scrollToProjects} ><i class="fas fa-chevron-down"></i></a>        
+                            <a href="#project-quick-anchor"><i className="fas fa-chevron-down"></i></a>   
                         </div>
                         
                       
