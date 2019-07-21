@@ -22,6 +22,8 @@ export class GlobalTopContainer extends Component{
         
         // adding true here was extremely important
     }
+
+    
     
 
     dropTextAndOpacity = (e) => {
@@ -406,7 +408,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     white-space: normal;
     display:flex;
     align-items:center;
-    padding: 12% 0% 20% 0%;
+    
     justify-content:center;
     flex-direction:column;
     
@@ -414,16 +416,15 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     height:900px;
 
     @media(max-width:1000px){
-        height:800px;
+        height:1024px;
         padding:0px;
 
     }
 
     @media(max-width:590px){
-             
+        height:667px;
                 
-             
-             height: 667px;
+           
              
      }
 
@@ -466,6 +467,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
                 cursor:pointer;
                 transition:.5s ease;
                 color:#5f5f5f;
+                
             }
             @media(max-width:590px){
                 font-size: 3rem;
