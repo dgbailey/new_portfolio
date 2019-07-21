@@ -24,7 +24,19 @@ export class GlobalTopContainer extends Component{
     }
 
     
-    
+    scrollToProjects = () => {
+        
+        let elementList = document.querySelector("#project-quick-anchor");
+        let elDistFromTop;
+        elementList.forEach( element => {
+
+            let elDistFromTop = element.getBoundingClientRect().top
+           
+        })
+
+        window.scroll(elDistFromTop)
+
+    }
 
     dropTextAndOpacity = (e) => {
         
@@ -148,7 +160,7 @@ export class GlobalTopContainer extends Component{
                             <p>Dustin is a developer living in San Francisco.  He believes that small details make all the difference in the quality we perceive in the people and things that surround us.  <span className="hidden-mobile">He hopes to continually learn, appreciate, and perhaps even contribute to some of those details.</span></p>
 
                             
-                            <a href="#project-quick-anchor"><i class="fas fa-chevron-down"></i></a>        
+                            <a href="" onClick={this.scrollToProjects} ><i class="fas fa-chevron-down"></i></a>        
                         </div>
                         
                       
@@ -422,11 +434,22 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     }
 
     @media(max-width:590px){
-        height:667px;
+        height:736px;
+        padding:0px;
                 
            
              
-     }
+    }
+
+    @media(max-width:400px){
+        height:667px;
+        padding:0px;
+                
+           
+             
+    }
+
+    
 
     
 
