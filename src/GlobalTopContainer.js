@@ -146,13 +146,14 @@ export class GlobalTopContainer extends Component{
                             <p>Dustin is a developer living in San Francisco.  He believes that small details make all the difference in the quality we perceive in the people and things that surround us.  <span className="hidden-mobile">He hopes to continually learn, appreciate, and perhaps even contribute to some of those details.</span></p>
 
                             
-                                            
+                            <a href="#project-quick-anchor"><i class="fas fa-chevron-down"></i></a>        
                         </div>
+                        
                       
                     </div>
                 </div>
             
-                <div  className="parallax__layer parallax__layer--a">
+                <div  className="parallax__layer parallax__layer--a" id="project-quick-anchor">
                     <div className="front-end-description-container">
                         <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
                         
@@ -410,6 +411,23 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     flex-direction:column;
     
     background: #f7f7f7;
+    height:900px;
+
+    @media(max-width:1000px){
+        height:800px;
+        padding:0px;
+
+    }
+
+    @media(max-width:590px){
+             
+                
+             
+             height: 667px;
+             
+     }
+
+    
 
     .contact-icon-container{
         display:flex:
@@ -422,6 +440,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
              
                 
                 margin:10px;
+                
         }
         
         a{
@@ -610,6 +629,10 @@ ${'' /*
         -o-animation:      fade-in-animation 1s both; /* Opera 12+ */
         animation:         fade-in-animation 1s both; /* IE 10+, Fx 29+ */
 
+        @media(max-width:1000px){
+            font-size: 6rem;
+        }
+
         animation-delay:.3s;
         @media (max-width:590px){
             font-size: 5.2rem;
@@ -658,15 +681,37 @@ ${'' /*
         width: 853px;
         line-height: 3.5rem;
 
+
+        .fas.fa-chevron-down {
+
+            padding: 40px;
+            font-size: 4rem;
+            color: #d3d3d363;
+            transition:.5s ease;
+
+            &:hover{
+                cursor:pointer;
+                color:lightgray;
+            }
+        }
+
+        @media(max-width:1000px){
+            font-size: 2rem;
+            width:600px;
+       }
+
         @media(max-width:590px){
            
            width:100%;
            font-size:1.7rem;
            line-height: 2.5rem;
+           width: 100%;
            .hidden-mobile{
                display:none;
            }
        }
+
+       
 
 }
        

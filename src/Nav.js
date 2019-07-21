@@ -43,6 +43,9 @@ const StyledNavigation = styled.nav`
         @media(max-width:590px){
             padding: 10px 30px;
         }
+        @media(max-width:1000px){
+            width: 82vw;
+        }
     }
 
     .nav-portfolio-name{
