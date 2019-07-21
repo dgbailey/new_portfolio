@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {theme} from "./config";
 import {ProductCarousel} from "./ProductCarousel";
+import { labeledStatement } from "@babel/types";
 
 
 export class GlobalTopContainer extends Component{
@@ -18,11 +19,24 @@ export class GlobalTopContainer extends Component{
             document.addEventListener('scroll', this.titleTextAndOpacity,true)
             document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
+            // document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
         
         
         // adding true here was extremely important
     }
 
+    // scrollToCloseContactMenu(){
+       
+        
+    //     let element = document.querySelector(".hidden-contact-info");
+    //     console.log(element)
+    //     element.classList.remove('false')
+    //     element.classList.add('hidden')
+        
+
+       
+
+    // }
     
     scrollToProjects(){
        

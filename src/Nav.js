@@ -14,12 +14,49 @@ export class Nav extends Component{
     
 
     }
+
+    componentDidMount(){
+        document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
+    }
     
+     scrollToCloseContactMenu(){
+       
+        
+        let element = document.querySelector(".hidden-contact-info");
+        
+        element.classList.remove('false')
+        element.classList.add('hidden')
+        
+
+       
+
+    }
+
+    clickForContactMenu(){
+       
+        
+        let element = document.querySelector(".hidden-contact-info");
+        
+       if( element.classList.contains('hidden')){
+           element.classList.remove('hidden')
+       }
+       else{
+            element.classList.add('hidden')
+       }
+     
+        
+
+       
+
+    }
+
+   
     revealContactInfo = () => {
 
         this.setState({infoHidden:!this.state.infoHidden})
     }
 
+    
     
 
     
@@ -30,7 +67,7 @@ export class Nav extends Component{
                     <div className="nav-portfolio-name">Dustin Bailey</div>
                     <div className="contact-dropdown-container">
                         
-                        <button onClick={this.revealContactInfo} className="contact-btn"><span>Contact</span><i class="fas fa-bars"></i></button>
+                        <button onClick={this.clickForContactMenu} onScroll={this.scrollCloseContactInfo} className="contact-btn"><span>Contact</span><i class="fas fa-bars"></i></button>
                             <div className={`hidden-contact-info ${this.state.infoHidden && 'hidden'}`}>
                                 <div className="dropdown-arrow"></div>
                                 <div className="dropdown-menu">
