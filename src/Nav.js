@@ -20,6 +20,7 @@ export class Nav extends Component{
         this.setState({infoHidden:!this.state.infoHidden})
     }
 
+    
 
     
     render(){
