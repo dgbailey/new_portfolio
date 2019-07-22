@@ -650,7 +650,7 @@ ${'' /*
         align-items:center;
         height:400px;
         @media(max-width:590px){
-            width: 82vw;
+            width: 84vw;
         }
     }
     .portfolio-name{
@@ -678,7 +678,7 @@ ${'' /*
             width:100%;
         }
         @media (max-width:570px){
-            font-size: 4.5rem;
+            font-size: 3.2rem;
             
         }
     }
