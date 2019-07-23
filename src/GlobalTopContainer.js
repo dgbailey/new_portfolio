@@ -174,7 +174,7 @@ export class GlobalTopContainer extends Component{
                         <h1 className="portfolio-name">Documenting the detail.</h1>
                                         
                         <div className="longer-bio">
-                            <p>Dustin is a developer living in San Francisco.  He believes that small details make all the difference in the quality we perceive in the people and things that surround us.  <span className="hidden-mobile">He hopes to continue learning, appreciating, and contributing to some of those details.</span></p>
+                            <p>Dustin is a developer living in San Francisco.  He believes that small details make all the difference in the quality we perceive in the people and things that surround us.  <span className="hidden-mobile">His goal is to continue learning, appreciating, and contributing to some of those details.</span></p>
 
                             
                             <a href="#project-quick-anchor"><i className="fas fa-chevron-down"></i></a>   
