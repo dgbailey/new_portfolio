@@ -214,7 +214,7 @@ const StyledNavigation = styled.nav`
                 -webkit-box-shadow: -3px -3px 5px rgba(82,95,127,.04);
                 box-shadow: -3px -3px 5px rgba(82,95,127,.04);
                 will-change: transform;
-                right: 25px;
+                right: 23px;
                 
                 position:absolute;
                 top: 54px;
@@ -257,9 +257,10 @@ const StyledNavigation = styled.nav`
                     flex-direction: column;
                     align-items: center;
                     align-items: center;
-                    left: 60px;
-                    width: 80px;
+                    left: 73px;
+                    width: 58px;
                     height: 155px;
+                    padding: 15px 0px;
                 }
 
 
