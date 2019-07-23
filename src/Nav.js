@@ -140,6 +140,9 @@ const StyledNavigation = styled.nav`
         border:none;
         background:Transparent;
         padding:0px;
+        background:#0080ff;
+        padding:5px;
+        color:white;
         
        
         font-size: 1.4rem;
@@ -152,7 +155,7 @@ const StyledNavigation = styled.nav`
             &:hover{
                 cursor:pointer;
                 
-                color:gray;
+                
             
             
             
@@ -211,7 +214,7 @@ const StyledNavigation = styled.nav`
                 -webkit-box-shadow: -3px -3px 5px rgba(82,95,127,.04);
                 box-shadow: -3px -3px 5px rgba(82,95,127,.04);
                 will-change: transform;
-                right: 17px;
+                right: 25px;
                 
                 position:absolute;
                 top: 54px;
@@ -234,7 +237,7 @@ const StyledNavigation = styled.nav`
                 padding:20px;
                 position:absolute;
                 top:60px;
-                left:0px;
+                left: 3px;
                 transform: translateX(-73px);
                 box-shadow: 0px 9px 14px -6px rgba(0,0,0,0.11);
                 border-radius: 5px;
@@ -254,7 +257,7 @@ const StyledNavigation = styled.nav`
                     flex-direction: column;
                     align-items: center;
                     align-items: center;
-                    left: 59px;
+                    left: 60px;
                     width: 80px;
                     height: 155px;
                 }
@@ -284,7 +287,7 @@ const StyledNavigation = styled.nav`
                     animation:         fade-in-opacity-only-animation 1s both; /* IE 10+, Fx 29+ */
 
                     animation-delay:.1s;
-
+                    color:#D44638;
                 }
 
                 .fab.fa-git-square{
@@ -293,7 +296,7 @@ const StyledNavigation = styled.nav`
                     -o-animation:      fade-in-opacity-only-animation 1s both; /* Opera 12+ */
                     animation:         fade-in-opacity-only-animation 1s both; /* IE 10+, Fx 29+ */
                     animation-delay:.2s;
-
+                    color:#24292e;
                 }
 
                 .fab.fa-linkedin{
@@ -302,6 +305,7 @@ const StyledNavigation = styled.nav`
                     -o-animation:      fade-in-opacity-only-animation 1s both; /* Opera 12+ */
                     animation:         fade-in-opacity-only-animation 1s both; /* IE 10+, Fx 29+ */
                     animation-delay:.3s;
+                    color:#0077B5;
                 }
 
 
