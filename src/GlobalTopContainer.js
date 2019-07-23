@@ -217,7 +217,7 @@ export class GlobalTopContainer extends Component{
                                     <a href="http://tiemendocrm.com/" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                                <div className="ucd-icon-description">Website.</div>
+                                                <div className="ucd-icon-description islink">Visit Site.</div>
                                             </div>
                                         </a>
                                     </div>
@@ -228,7 +228,7 @@ export class GlobalTopContainer extends Component{
                                         <a href="https://github.com/labs13-agriculture" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                                <div className="ucd-icon-description">Codebase.</div>
+                                                <div className="ucd-icon-description islink">View Code.</div>
                                             </div>
                                         </a>
                                     </div>
@@ -269,7 +269,7 @@ export class GlobalTopContainer extends Component{
                                     <a href="https://getflocks.herokuapp.com/register" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                                <div className="ucd-icon-description">Website.</div>
+                                                <div className="ucd-icon-description islink">Visit Site.</div>
                                             </div>
                                         </a>
                                     </div>
@@ -280,7 +280,7 @@ export class GlobalTopContainer extends Component{
                                     <a href="https://github.com/flocks1/login" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                                <div className="ucd-icon-description">Codebase.</div>
+                                                <div className="ucd-icon-description islink">View Code.</div>
                                             </div>
                                         </a>
                                     </div>
@@ -322,7 +322,7 @@ export class GlobalTopContainer extends Component{
                                         <a href="https://talweg.herokuapp.com/" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fas fa-tv"></i></div>
-                                                <div className="ucd-icon-description">Website.</div>
+                                                <div className="ucd-icon-description islink">Visit Site.</div>
                                             </div>
                                         </a>
                                     </div>
@@ -331,7 +331,7 @@ export class GlobalTopContainer extends Component{
                                 <div className="icon-container">
                                     <div className="icon-position-container">
                                         <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                        <div className="ucd-icon-description">Codebase.</div>
+                                        <div className="ucd-icon-description islink">View Code.</div>
                                     </div>
                                 </div>
                             </div>
@@ -924,6 +924,8 @@ ${'' /*
             width:100px;
             font-size: 1.4rem;
             text-align:left;
+
+            
         }
 
         .icon-container {
@@ -936,7 +938,12 @@ ${'' /*
 
                 width: 50%;
             }
-            
+            &:hover{
+                .islink{
+                    color:#5b2dff;
+                }
+                
+            }
 
         }
 
