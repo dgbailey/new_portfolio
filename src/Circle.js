@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export const Circle = (props) => {
     return(
-        <StyledCircle className={props.currentPage === props.id ? "active":''}>
+        <StyledCircle onClick={() => props.goToIndex(props.id)} className={props.currentPage === props.id ? "active":''}>
 
         </StyledCircle>
     )
@@ -22,6 +22,10 @@ const StyledCircle = styled.div`
     background: lightgray;
     transition:.3s ease;
     transform:scale(0.8);
+
+    &:hover{
+        cursor:pointer;
+    }
 
 
     &.active{

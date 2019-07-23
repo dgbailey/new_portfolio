@@ -143,16 +143,13 @@ const StyledNavigation = styled.nav`
         background:#0080ff;
         padding:5px;
         color:white;
+        transition:.15s ease;
         
        
         font-size: 1.4rem;
         width:auto;
         font-family:${theme.globalTextFont};
-        
-
-        span{
-            
-            &:hover{
+        &:hover{
                 cursor:pointer;
                 
                 
@@ -160,6 +157,11 @@ const StyledNavigation = styled.nav`
             
             
             }
+        
+
+        span{
+            
+           
 
             
             @media(max-width:590px){

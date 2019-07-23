@@ -35,11 +35,15 @@ export class ProductCarousel extends Component{
         
     }
 
+    goToIndex = (index) => {
+        this.setState({currentPage:index})
+    }
+
     render(){
         return(
             <StyledProductCarousel>
                 
-                <StyledBtnDiv className="btn-div">
+                <StyledBtnDiv className={`btn-div ${this.props.imageArray.length == 1 && "hidden"}`}>
                     <button className="increment-btn" onClick={this.decrement}><i class="fas fa-chevron-left"></i></button>
                     <button className="decrement-btn" onClick={this.increment}><i class="fas fa-chevron-right"></i></button>
                 </StyledBtnDiv>
@@ -53,7 +57,7 @@ export class ProductCarousel extends Component{
                     />)}
 
                 
-                <ImageCountVisual imageArray={this.props.imageArray} currentPage={this.state.currentPage}/>
+                <ImageCountVisual goToIndex={this.goToIndex} imageArray={this.props.imageArray} currentPage={this.state.currentPage}/>
             </StyledProductCarousel>
             
 
@@ -78,6 +82,10 @@ const StyledProductCarousel = styled.div`
     transform: ${props => props.theme.scaling};
     transform-origin: ${props => props.theme.origin};
     position:relative;
+
+    .hidden{
+            display:none;
+        }
     
     .btn-div{
         margin-bottom:20px;
@@ -144,5 +152,7 @@ const StyledBtnDiv = styled.div`
             left:100%;
            
         }
+
+        
     }
 `

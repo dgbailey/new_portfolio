@@ -19,6 +19,7 @@ export class GlobalTopContainer extends Component{
             document.addEventListener('scroll', this.titleTextAndOpacity,true)
             document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
+            // document.addEventListener('click', this.hideContactPopup,true)
             // document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
         
         
@@ -38,14 +39,16 @@ export class GlobalTopContainer extends Component{
 
     // }
     
-    scrollToProjects(){
+    hideContactPopup(){
        
+       
+            let contactInfo = document.querySelector(".hidden-contact-info")
+            contactInfo.classList.add("hidden")
         
-        let element = document.querySelector("#project-quick-anchor");
-        let elDistFromTop = element.getBoundingClientRect().top
-        console.log(elDistFromTop)
+        
+        
 
-        window.scroll(0,elDistFromTop)
+        
         
 
        
@@ -163,7 +166,7 @@ export class GlobalTopContainer extends Component{
     render(){
 
         return(
-            <StyledGlobalTopContainer>
+            <StyledGlobalTopContainer onClick={this.hideContactPopup}>
                 {/* <Nav/> */}
                 <div className="parallax__layer parallax__layer--intro">
                     <div className="scroll-content-container">
@@ -192,7 +195,7 @@ export class GlobalTopContainer extends Component{
                     <div className="content-container full">
                     <div className="front-end-description-container">
                         
-                        <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM</strong> <div className="big-overview-text"> <strong>React & Redux.</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL.</strong></div></div>
+                        <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM</strong> <div className="big-overview-text"> <strong>React & Redux</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL</strong></div></div>
                         
                     </div>
                         <ProductCarousel imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
@@ -240,7 +243,7 @@ export class GlobalTopContainer extends Component{
                 <div className="parallax__layer parallax__layer--b">
                     <div className="front-end-description-container">
                 
-                        <div className="front-end-project text"><strong className="strong-title"><em>Flocks</em></strong><div className="big-overview-text"><strong>React & Redux. </strong><br></br> <span className="elevator-line"><strong>Sentiment analysis UI.</strong></span></div></div>
+                        <div className="front-end-project text"><strong className="strong-title"><em>Flocks</em></strong><div className="big-overview-text"><strong>React & Redux </strong><br></br> <span className="elevator-line"><strong>Sentiment analysis UI</strong></span></div></div>
                         
                     </div>
                 
@@ -296,7 +299,7 @@ export class GlobalTopContainer extends Component{
                 <div className="parallax__layer parallax__layer--d">
                     <div className="front-end-description-container">
                     
-                        <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong><div className="big-overview-text"><strong>React & Redux.</strong><br></br><span className="elevator-line"><strong>Subscription management.</strong></span></div></div>
+                        <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong><div className="big-overview-text"><strong>React & Redux</strong><br></br><span className="elevator-line"><strong>Subscription management</strong></span></div></div>
                     
                     </div>
                     <div className="content-container full">
