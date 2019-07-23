@@ -14,6 +14,7 @@ export function ImageCountVisual(props){
                 <Circle
                 key={index} 
                 id={index}
+                goToIndex={props.goToIndex}
                 
                 currentPage={props.currentPage}
                 />)}
