@@ -37,7 +37,12 @@ const StyledTopPageGraphicsContainer = styled.div`
     width:100%;
     position: relative;
     
-    top: ${props => props.top}px;
+   @media(max-width:590px){
+        scroll-snap-align: start;
+
+   }
+
+
 
     
 
@@ -55,7 +60,7 @@ const StyledTopPageGraphicsContainer = styled.div`
             }
 
             @media(max-width:590px){
-            width: 100%;
+            width:82vw;
 
        }
 

@@ -83,8 +83,21 @@ const StyledProductCarousel = styled.div`
     transform-origin: ${props => props.theme.origin};
     position:relative;
 
+    @media(max-width:590px){
+        overflow-x: scroll;
+        flex-direction: row;
+        width: 100%;
+        scroll-snap-type: mandatory;
+        scroll-snap-points-x: repeat(300px);
+        scroll-snap-type: x mandatory;
+    }
+
     .hidden{
             display:none;
+
+            @media(max-width:590px){
+                display:block;
+            }
         }
     
     .btn-div{
