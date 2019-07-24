@@ -30,9 +30,13 @@ export function ImageCountVisual(props){
 const StyledCircleFeedbackContainer = styled.div`
 
     overflow:hidden;
-    height:60px;
+    
     display:flex;
     
+    
     margin:10px auto 0px;
+    @media(max-width:590px){
+        
+    }
 
 `

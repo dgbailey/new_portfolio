@@ -35,30 +35,47 @@ export class ProductCarousel extends Component{
         
     }
 
+    countSnapPoints = (e) => {
+        console.log("X movement",e.target.x)
+        //61 and 38 %
+        if((e.target.x > 0 ) && (e.target.x/e.target.clientWidth >= .61)){
+            this.setState({currentPage:this.state.currentPage -1})
+        }
+        else if ((e.target.x < 0 ) && (-1*e.target.x/e.target.clientWidth >= .39)){
+            this.setState({currentPage:this.state.currentPage + 1})
+        }
+        console.log("X",e.target.x)
+        console.log("W",e.target.clientWidth)
+       
+    }
+
     goToIndex = (index) => {
         this.setState({currentPage:index})
     }
 
     render(){
         return(
-            <StyledProductCarousel>
-                
-                <StyledBtnDiv className={`btn-div ${this.props.imageArray.length == 1 && "hidden"}`}>
-                    <button className="increment-btn" onClick={this.decrement}><i class="fas fa-chevron-left"></i></button>
-                    <button className="decrement-btn" onClick={this.increment}><i class="fas fa-chevron-right"></i></button>
-                </StyledBtnDiv>
-        
-                {this.props.imageArray.map(
-                    (image,index) => 
-                    <ImageStylingContainer onClick={this.increment} top={this.props.top}
-                    key={index} id={index} 
-                    image={image}
-                    currentPage={this.state.currentPage}
-                    />)}
+            <StyledCarouselContainer>
+                <StyledProductCarousel>
+                    
+                    <StyledBtnDiv className={`btn-div ${this.props.imageArray.length == 1 && "hidden"}`}>
+                        <button className="increment-btn" onClick={this.decrement}><i class="fas fa-chevron-left"></i></button>
+                        <button className="decrement-btn" onClick={this.increment}><i class="fas fa-chevron-right"></i></button>
+                    </StyledBtnDiv>
+            
+                    {this.props.imageArray.map(
+                        (image,index) => 
+                        <ImageStylingContainer onScroll={this.countSnapPoints}  top={this.props.top}
+                        key={index} id={index} 
+                        image={image}
+                        currentPage={this.state.currentPage}
+                        />)}
 
-                
+                    
+                   
+                </StyledProductCarousel>
                 <ImageCountVisual goToIndex={this.goToIndex} imageArray={this.props.imageArray} currentPage={this.state.currentPage}/>
-            </StyledProductCarousel>
+            </StyledCarouselContainer>
             
 
         )
@@ -75,6 +92,18 @@ const theme = {
     zScaling:"transform: translateZ(60px) scale(.8)"
 }
 
+const StyledCarouselContainer = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    @media(max-width:590px){
+        width: 82vw;
+        
+    }
+    
+
+`
+
 const StyledProductCarousel = styled.div`
     display:flex;
     flex-direction:column;
@@ -88,8 +117,19 @@ const StyledProductCarousel = styled.div`
         flex-direction: row;
         width: 100%;
         scroll-snap-type: mandatory;
-        scroll-snap-points-x: repeat(300px);
+        scroll-snap-points-x: repeat(50%);
         scroll-snap-type: x mandatory;
+        scroll-snap-align:center;
+
+        &::-webkit-scrollbar{
+            width: 0px;
+            background: transparent;}
+        &{
+            scrollbar-width: none;
+        }
+    }
+
+    
     }
 
     .hidden{

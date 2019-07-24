@@ -9,12 +9,12 @@ function ImageStylingContainer(props) {
         const {image,currentPage,id} = props;
         return(
             
-                <StyledTopPageGraphicsContainer onClick={props.onClick} className={currentPage === id ? "":"hidden"}>
+                <StyledTopPageGraphicsContainer   className={currentPage === id ? "":"hidden"}>
             
                     
                     <div className="image-style-container">
                         <div className="image-overlay"></div>
-                        <img className="product-image" src={require(`./images/${image}.png`)}/>
+                        <img onTouchEnd={props.onScroll} className="product-image" src={require(`./images/${image}.png`)}/>
                         
                     </div>
                 
@@ -37,8 +37,10 @@ const StyledTopPageGraphicsContainer = styled.div`
     width:100%;
     position: relative;
     
+    
    @media(max-width:590px){
         scroll-snap-align: start;
+        
 
    }
 
@@ -61,8 +63,9 @@ const StyledTopPageGraphicsContainer = styled.div`
 
             @media(max-width:590px){
             width:82vw;
+            box-shadow: none;
 
-       }
+            }    
 
         }
 
@@ -70,15 +73,7 @@ const StyledTopPageGraphicsContainer = styled.div`
         
        
 
-        .image-overlay{
-        position: absolute;
-        ${'' /* background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(22, 22, 26, 1) 100%); */}
-        height: 100%;
-        width: 100%;
-        }
+        
 
         
     }
