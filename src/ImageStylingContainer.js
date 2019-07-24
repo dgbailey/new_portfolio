@@ -14,7 +14,7 @@ function ImageStylingContainer(props) {
                     
                     <div className="image-style-container">
                         <div className="image-overlay"></div>
-                        <img onTouchEnd={props.onScroll} className="product-image" src={require(`./images/${image}.png`)}/>
+                        <img onTouchMove={props.onScroll} className="product-image" src={require(`./images/${image}.png`)}/>
                         
                     </div>
                 

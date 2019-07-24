@@ -38,10 +38,10 @@ export class ProductCarousel extends Component{
     countSnapPoints = (e) => {
         console.log("X movement",e.target.x)
         //61 and 38 %
-        if((e.target.x > 0 ) && (e.target.x/e.target.clientWidth >= .61)){
+        if((e.target.x > 0 ) && (e.target.x/e.target.clientWidth >.5)){
             this.setState({currentPage:this.state.currentPage -1})
         }
-        else if ((e.target.x < 0 ) && (-1*e.target.x/e.target.clientWidth >= .39)){
+        else if ((e.target.x < 0 ) && (-1*e.target.x/e.target.clientWidth > .5)){
             this.setState({currentPage:this.state.currentPage + 1})
         }
         console.log("X",e.target.x)
