@@ -51,10 +51,7 @@ export class Nav extends Component{
     }
 
    
-    revealContactInfo = () => {
-
-        this.setState({infoHidden:!this.state.infoHidden})
-    }
+    
 
     
     
@@ -151,6 +148,7 @@ const StyledNavigation = styled.nav`
         font-family:${theme.globalTextFont};
         &:hover{
                 cursor:pointer;
+                background:#0069d2;
                 
                 
             
