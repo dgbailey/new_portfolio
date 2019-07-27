@@ -19,7 +19,7 @@ export class GlobalTopContainer extends Component{
             document.addEventListener('scroll', this.titleTextAndOpacity,true)
             document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
-            // document.addEventListener('click', this.hideContactPopup,true)
+           
             // document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
         
         
@@ -38,6 +38,8 @@ export class GlobalTopContainer extends Component{
        
 
     // }
+
+    
     
     hideContactPopup(){
        
@@ -198,7 +200,7 @@ export class GlobalTopContainer extends Component{
                         <div className="front-end-project text"><br></br> <strong className="strong-title"><em>Tieme Ndo</em> CRM</strong> <div className="big-overview-text"> <strong>React & Redux</strong><br></br> <strong> Java Spring &</strong> <strong>PostgreSQL</strong></div></div>
                         
                     </div>
-                        <ProductCarousel imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
+                        <ProductCarousel className="product-carousel" imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
                         <div className="under-carousel-description-cont">
                         <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an <a href="http://tiemendo.com/cord" target="_blank">organization</a> that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
                             Project scope was the largest concern for the team, ultimately resulting in the prioritization of code extensibility over a full feature set. <br></br><br></br>I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
@@ -389,7 +391,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
    
    
     .parallax__layer {
-    
+    will-change:transform;
     width: 100%;
     vertical-align: middle;
     white-space: normal;
@@ -761,7 +763,7 @@ ${'' /*
        
        
 
-        
+      
         
 
         
@@ -961,6 +963,37 @@ ${'' /*
 
 
     }
+
+    #hidden-nav{
+        visibility:hidden;
+    }
+    .sticky-expand{
+        ${'' /* these first two styles fixed jumping sticky carousel in safari */}
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: fixed;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        transform: scale(1.23);
+        ${'' /* margin-top:38px; */}
+        padding-bottom:20px;
+        
+        .product-image{
+            box-shadow: -3px -3px 5px rgba(82,95,127,.04);
+            border-radius:0px;
+            margin-top: 12px;
+        }
+
+        .slide-num-visual{
+            display:none;
+        }
+       
+    
+    }
+
+   
+    
 
     .fab.fa-git-square {
     font-size: 4.2rem;

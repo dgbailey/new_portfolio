@@ -55,7 +55,7 @@ export class ProductCarousel extends Component{
 
     render(){
         return(
-            <StyledCarouselContainer>
+            <StyledCarouselContainer className="product-carousel">
                 <StyledProductCarousel>
                     
                     <StyledBtnDiv className={`btn-div ${this.props.imageArray.length == 1 && "hidden"}`}>
@@ -100,7 +100,7 @@ const StyledCarouselContainer = styled.div`
         width: 82vw;
         
     }
-    
+    transition:.3s ease;
 
 `
 
@@ -111,6 +111,7 @@ const StyledProductCarousel = styled.div`
     transform: ${props => props.theme.scaling};
     transform-origin: ${props => props.theme.origin};
     position:relative;
+    
 
     @media(max-width:590px){
         overflow-x: scroll;
