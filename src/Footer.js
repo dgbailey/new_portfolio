@@ -13,7 +13,7 @@ export const Footer = () => {
     
 }
 
-const StyledFooter = styled.footer`
+const StyledFooter = styled.section`
 
     width:100%;
     height:100px;
@@ -46,10 +46,14 @@ const StyledFooter = styled.footer`
 
     .footer-text{
         font-family:${theme.globalTextFont};
-        font-size:1rem;
+        font-size:1.5rem;
         margin:0px 5px;
         
         color:#0080ff;
+
+        @media(max-width:590px){
+            font-size:1rem
+        }
     }
 
     
