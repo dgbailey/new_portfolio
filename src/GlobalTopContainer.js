@@ -643,6 +643,8 @@ ${'' /*
         width: 82vw;
 
        }
+
+       
     }
 
     .scroll-content-container{
@@ -681,9 +683,12 @@ ${'' /*
         @media (max-width:590px){
             font-size: 5.2rem;
             width:100%;
+            
         }
         @media (max-width:570px){
             font-size: 3.2rem;
+            
+            width: 92vw;
             
         }
     }
@@ -701,6 +706,7 @@ ${'' /*
         @media (max-width:590px){
             
             font-size: 1.3rem;
+            padding: 5px 0px 10px;
            
         }
     }
