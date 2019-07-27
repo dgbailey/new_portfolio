@@ -100,7 +100,7 @@ const StyledCarouselContainer = styled.div`
         width: 82vw;
         
     }
-    transition:.3s ease;
+    transition:.15s ease;
 
 `
 

@@ -17,9 +17,19 @@ export class Nav extends Component{
 
     componentDidMount(){
         document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+        
+        ){
             //     // what you want to run in mobile
             document.addEventListener('scroll', this.expandAndSticky,true)
+        }
+        else{
+            
         }
     }
     
@@ -32,7 +42,7 @@ export class Nav extends Component{
 
             let distanceFromTop = bounding_rect.top
             let distanceFromBottom = bounding_rect.bottom
-            if (distanceFromTop <40 && distanceFromTop >-220){
+            if (distanceFromTop <20){
                 element.classList.add("sticky-expand")
                 nav.classList.add("hidden-nav")
             }
@@ -120,7 +130,7 @@ const StyledNavigation = styled.nav`
     width:100%;
     
     position:fixed;
-    transition:.3s ease;
+    transition:.02s ease;
    
     font-family:${theme.largeFont};
     

@@ -643,6 +643,8 @@ ${'' /*
         width: 82vw;
 
        }
+
+       
     }
 
     .scroll-content-container{
@@ -681,9 +683,12 @@ ${'' /*
         @media (max-width:590px){
             font-size: 5.2rem;
             width:100%;
+            
         }
         @media (max-width:570px){
             font-size: 3.2rem;
+            
+            width: 92vw;
             
         }
     }
@@ -701,6 +706,7 @@ ${'' /*
         @media (max-width:590px){
             
             font-size: 1.3rem;
+            padding: 5px 0px 10px;
            
         }
     }
@@ -845,7 +851,7 @@ ${'' /*
         display:flex;
         justify-content:space-between;
         width: 60vw;
-        margin-top: 7%;
+        margin-top: 10%;
         overflow:hidden;
         max-width: 947px;
         @media(max-width:1000px){
@@ -971,16 +977,18 @@ ${'' /*
         ${'' /* these first two styles fixed jumping sticky carousel in safari */}
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        position: fixed;
+        
         position: -webkit-sticky;
         position: sticky;
         top: 0;
         transform: scale(1.23);
         ${'' /* margin-top:38px; */}
-        padding-bottom:20px;
+        padding-bottom: 5%;
+        
+        z-index:1000;
         
         .product-image{
-            box-shadow: -3px -3px 5px rgba(82,95,127,.04);
+          
             border-radius:0px;
             margin-top: 12px;
         }
