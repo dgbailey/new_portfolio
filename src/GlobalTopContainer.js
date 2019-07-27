@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {theme} from "./config";
 import {ProductCarousel} from "./ProductCarousel";
-import { labeledStatement } from "@babel/types";
+import {Footer} from "./Footer";
 
 
 export class GlobalTopContainer extends Component{
@@ -352,7 +352,7 @@ export class GlobalTopContainer extends Component{
             
                 
     
-
+            <Footer/>
             </StyledGlobalTopContainer>
         )
 
@@ -391,7 +391,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
    
    
     .parallax__layer {
-    will-change:transform;
+    ${'' /* will-change:transform; */}
     width: 100%;
     vertical-align: middle;
     white-space: normal;
