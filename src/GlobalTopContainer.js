@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {theme} from "./config";
 import {ProductCarousel} from "./ProductCarousel";
-import { labeledStatement } from "@babel/types";
+import {Footer} from "./Footer";
 
 
 export class GlobalTopContainer extends Component{
@@ -352,7 +352,7 @@ export class GlobalTopContainer extends Component{
             
                 
     
-
+            <Footer/>
             </StyledGlobalTopContainer>
         )
 
