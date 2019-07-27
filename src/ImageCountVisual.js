@@ -8,7 +8,7 @@ export function ImageCountVisual(props){
    
     return(
 
-        <StyledCircleFeedbackContainer>
+        <StyledCircleFeedbackContainer className="slide-num-visual">
             {props.imageArray.map(
                 (element,index) => 
                 <Circle
@@ -33,7 +33,7 @@ const StyledCircleFeedbackContainer = styled.div`
     
     display:flex;
     
-    
+    transition:0s linear;
     margin:10px auto 0px;
     @media(max-width:590px){
         

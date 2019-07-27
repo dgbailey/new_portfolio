@@ -17,8 +17,38 @@ export class Nav extends Component{
 
     componentDidMount(){
         document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            //     // what you want to run in mobile
+            document.addEventListener('scroll', this.expandAndSticky,true)
+        }
     }
     
+    expandAndSticky(){
+        let page_images = document.querySelectorAll(".product-carousel")
+        let nav = document.querySelector(".main-nav")
+        let innerWindowSize = window.innerHeight
+        page_images.forEach(element => {
+            let bounding_rect = element.getBoundingClientRect()
+
+            let distanceFromTop = bounding_rect.top
+            let distanceFromBottom = bounding_rect.bottom
+            if (distanceFromTop <40 && distanceFromTop >-220){
+                element.classList.add("sticky-expand")
+                nav.classList.add("hidden-nav")
+            }
+
+            
+            else{
+                if(element.classList.contains("sticky-expand")){
+                    element.classList.remove("sticky-expand")
+                    nav.classList.remove("hidden-nav")
+                }
+            }
+
+        })
+
+        
+        }
      scrollToCloseContactMenu(){
        
         
@@ -59,7 +89,7 @@ export class Nav extends Component{
     
     render(){
         return(
-            <StyledNavigation>
+            <StyledNavigation className="main-nav">
                 <div className="nav-width-container">
                     <div className="nav-portfolio-name">Dustin Bailey</div>
                     <div className="contact-dropdown-container">
@@ -90,7 +120,7 @@ const StyledNavigation = styled.nav`
     width:100%;
     
     position:fixed;
-    
+    transition:.3s ease;
    
     font-family:${theme.largeFont};
     
@@ -100,9 +130,20 @@ const StyledNavigation = styled.nav`
     z-index: 5;
     top: 0;
     border-bottom: 1px solid lightgray;
-    background: #ffffffc9;
-    opacity: .8;
+    background: white;
+    ${'' /* opacity: .8; */}
+
+    &.hidden-nav{
+        visibility:hidden;
+        height:0px;
+        .nav-width-container{
+            display:none;
+        }
+
+  
+    }
    
+
 
     .nav-width-container{
         width: 938px;
@@ -193,6 +234,9 @@ const StyledNavigation = styled.nav`
 
         
     }
+
+   
+    
 
     .contact-dropdown-container{
             display:flex;
@@ -314,6 +358,8 @@ const StyledNavigation = styled.nav`
         }
     
     ${'' /* fade in opacity only */}
+
+    
 
     @-webkit-keyframes fade-in-opacity-only-animation {
     0%   { opacity: 0; 
