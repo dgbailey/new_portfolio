@@ -17,7 +17,10 @@ export class Nav extends Component{
 
     componentDidMount(){
         document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
-        document.addEventListener('scroll', this.expandAndSticky,true)
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            //     // what you want to run in mobile
+            document.addEventListener('scroll', this.expandAndSticky,true)
+        }
     }
     
     expandAndSticky(){
@@ -29,7 +32,7 @@ export class Nav extends Component{
 
             let distanceFromTop = bounding_rect.top
             let distanceFromBottom = bounding_rect.bottom
-            if (distanceFromTop <40 && distanceFromTop >-80){
+            if (distanceFromTop <40 && distanceFromTop >-220){
                 element.classList.add("sticky-expand")
                 nav.classList.add("hidden-nav")
             }
