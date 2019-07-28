@@ -129,7 +129,7 @@ const StyledNavigation = styled.nav`
 
     width:100%;
     
-    position:fixed;
+    position:absolute;
     transition:.02s ease;
    
     font-family:${theme.largeFont};
