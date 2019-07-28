@@ -969,6 +969,7 @@ ${'' /*
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         
+        
         position: -webkit-sticky;
         position: sticky;
         top: 0;

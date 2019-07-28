@@ -20,6 +20,7 @@ const StyledFooter = styled.section`
     display:flex;
     justify-content:center;
     align-items:center;
+    -webkit-backface-visibility: hidden;
 
 
 

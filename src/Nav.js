@@ -297,7 +297,7 @@ const StyledNavigation = styled.nav`
                 border-radius: 5px;
                 color: white;
                 border: 1px solid lightgray;
-                z-index: 50;
+                z-index: 9000;
                 background: white;
                 opacity:1.0;
                 justify-content: space-between;
