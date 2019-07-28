@@ -88,6 +88,7 @@ const StyledCarouselContainer = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
+    -webkit-backface-visibility: hidden;
     @media(max-width:590px){
         width: 82vw;
         
