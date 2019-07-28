@@ -10,34 +10,36 @@ export class GlobalTopContainer extends Component{
 
     
     componentDidMount(){
-        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        //     // what you want to run in mobile
-
-        // }
+        
+        if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)
+        
+        ){
+            //     // what you want to run in mobile
+            document.addEventListener('scroll', this.dropTextAndOpacity,true)
+            document.addEventListener('scroll', this.titleTextAndOpacity,true)
+            document.addEventListener('scroll', this.uCdTextAndOpacity,true)
+        }
+        else{
+            
+        
         
             document.addEventListener('scroll', this.dropTextAndOpacity,true)
             document.addEventListener('scroll', this.titleTextAndOpacity,true)
             document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
            
-            // document.addEventListener('scroll', this.scrollToCloseContactMenu,true)
+           
+        }
         
-        
-        // adding true here was extremely important
+        // adding true here was extremely important for react
     }
 
-    // scrollToCloseContactMenu(){
-       
-        
-    //     let element = document.querySelector(".hidden-contact-info");
-    //     console.log(element)
-    //     element.classList.remove('false')
-    //     element.classList.add('hidden')
-        
-
-       
-
-    // }
+   
 
     
     
@@ -202,7 +204,7 @@ export class GlobalTopContainer extends Component{
                     </div>
                         <ProductCarousel className="product-carousel" imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
                         <div className="under-carousel-description-cont">
-                        <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an <a href="http://tiemendo.com/cord" target="_blank">organization</a> that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
+                        <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an <a href="http://tiemendo.com/cord" rel="noopener noreferrer" target="_blank">organization</a> that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
                             Project scope was the largest concern for the team, ultimately resulting in the prioritization of code extensibility over a full feature set. <br></br><br></br>I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
@@ -219,7 +221,7 @@ export class GlobalTopContainer extends Component{
                                 </div>
                                 
                                     <div className="icon-container">
-                                    <a href="http://tiemendocrm.com/" target="_blank">
+                                    <a href="http://tiemendocrm.com/" rel="noopener noreferrer" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fas fa-tv"></i></div>
                                                 <div className="ucd-icon-description islink">Visit Site.</div>
@@ -230,7 +232,7 @@ export class GlobalTopContainer extends Component{
                                 
                                
                                     <div className="icon-container">
-                                        <a href="https://github.com/labs13-agriculture" target="_blank">
+                                        <a href="https://github.com/labs13-agriculture" rel="noopener noreferrer" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
                                                 <div className="ucd-icon-description islink">View Code.</div>
@@ -271,7 +273,7 @@ export class GlobalTopContainer extends Component{
 
                                 
                                     <div className="icon-container">
-                                    <a href="https://getflocks.herokuapp.com/register" target="_blank">
+                                    <a href="https://getflocks.herokuapp.com/register" rel="noopener noreferrer" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fas fa-tv"></i></div>
                                                 <div className="ucd-icon-description islink">Visit Site.</div>
@@ -282,7 +284,7 @@ export class GlobalTopContainer extends Component{
                                 
                                 
                                     <div className="icon-container">
-                                    <a href="https://github.com/flocks1/login" target="_blank">
+                                    <a href="https://github.com/flocks1/login" rel="noopener noreferrer" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
                                                 <div className="ucd-icon-description islink">View Code.</div>
@@ -324,7 +326,7 @@ export class GlobalTopContainer extends Component{
                                 </div>
                                 
                                     <div className="icon-container">
-                                        <a href="https://talweg.herokuapp.com/" target="_blank">
+                                        <a href="https://talweg.herokuapp.com/" rel="noopener noreferrer" target="_blank">
                                             <div className="icon-position-container">
                                                 <div className="ucd-icon"><i class="fas fa-tv"></i></div>
                                                 <div className="ucd-icon-description islink">Visit Site.</div>
@@ -369,7 +371,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
-    position: absolute;
+    
     
     perspective: 300px;
     scroll-behavior: smooth;
@@ -605,18 +607,7 @@ ${'' /*
         }
         
         
-        ${'' /* .front-end-description-container{
-            width:70vw;
-            justify-content:flex-start;
-            .text{
-                font-size: 5rem;
-                width: 700px;
-                display: flex;
-                flex-direction: column;
-                margin-top: 5%;
-            }
         
-        } */}
     
 
     
@@ -981,7 +972,7 @@ ${'' /*
         position: -webkit-sticky;
         position: sticky;
         top: 0;
-        transform: scale(1.23);
+        transform: scale(1.23,1.28);
         ${'' /* margin-top:38px; */}
         
         

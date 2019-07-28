@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import styled from "styled-components";
 
 
@@ -14,7 +14,7 @@ function ImageStylingContainer(props) {
                     
                     <div className="image-style-container">
                         <div className="image-overlay"></div>
-                        <img onTouchMove={props.onScroll} className="product-image" src={require(`./images/${image}.png`)}/>
+                        <img alt={"screenshot of product"} onTouchMove={props.onScroll} className="product-image" src={require(`./images/${image}.png`)}/>
                         
                     </div>
                 
