@@ -293,7 +293,7 @@ const StyledNavigation = styled.nav`
                 top:60px;
                 left: 3px;
                 transform: translateX(-73px);
-                box-shadow: 0px 9px 14px -6px rgba(0,0,0,0.11);
+                box-shadow: -1px 13px 15px -9px rgba(0, 0, 0, 0.28);
                 border-radius: 5px;
                 color: white;
                 border: 1px solid lightgray;
