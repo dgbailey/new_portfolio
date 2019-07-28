@@ -269,10 +269,11 @@ const StyledNavigation = styled.nav`
                 box-shadow: -3px -3px 5px rgba(82,95,127,.04);
                 will-change: transform;
                 right: 23px;
+                z-index:100;
                 
                 position:absolute;
                 top: 54px;
-                z-index:60;
+                
                 border-style:solid;
                 border-color:lightgray;
                 border-width: 1px 0px 0px 1px;
@@ -297,7 +298,8 @@ const StyledNavigation = styled.nav`
                 border-radius: 5px;
                 color: white;
                 border: 1px solid lightgray;
-                z-index: 9000;
+                
+                z-index: 99;
                 background: white;
                 opacity:1.0;
                 justify-content: space-between;
