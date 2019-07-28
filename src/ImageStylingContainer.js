@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import styled from "styled-components";
 
 
@@ -13,8 +13,8 @@ function ImageStylingContainer(props) {
             
                     
                     <div className="image-style-container">
-                        <div className="image-overlay"></div>
-                        <img onTouchMove={props.onScroll} className="product-image" src={require(`./images/${image}.png`)}/>
+                        
+                        <img alt={"screenshot of product"} onTouchMove={props.onScroll} className="product-image" src={require(`./images/${image}.png`)}/>
                         
                     </div>
                 
@@ -49,24 +49,30 @@ const StyledTopPageGraphicsContainer = styled.div`
     
 
     .image-style-container{
-        
-        
-        .product-image{
-            box-shadow: -12px 11px 27px 0px rgba(0,0,0,0.3);
+            
             width:943.6px;
             max-width:997px;
             border-radius: 4px;
 
             @media(max-width:1000px){
                 width:70vw;
+               
             }
 
             @media(max-width:590px){
-            width:82vw;
-            box-shadow: none;
+                width:82vw;
+                box-shadow: none;
+            
+            }  
+        
+        .product-image{
+            box-shadow: -12px 11px 27px 0px rgba(0,0,0,0.3);
+            object-fit:contain;
+            border-radius: 4px;
 
-            }    
-
+            @media(max-width:590px){
+                box-shadow: none;
+            } 
         }
 
 

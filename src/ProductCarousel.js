@@ -10,7 +10,7 @@ export class ProductCarousel extends Component{
 
         this.state = {
             currentPage:0,
-            imageArray:["tieme_light","talweg_light","flocks_light","new_tieme_mark"]
+
         }
 
     }
@@ -58,7 +58,7 @@ export class ProductCarousel extends Component{
             <StyledCarouselContainer className="product-carousel">
                 <StyledProductCarousel>
                     
-                    <StyledBtnDiv className={`btn-div ${this.props.imageArray.length == 1 && "hidden"}`}>
+                    <StyledBtnDiv className={`btn-div ${this.props.imageArray.length === 1 && "hidden"}`}>
                         <button className="increment-btn" onClick={this.decrement}><i class="fas fa-chevron-left"></i></button>
                         <button className="decrement-btn" onClick={this.increment}><i class="fas fa-chevron-right"></i></button>
                     </StyledBtnDiv>
@@ -83,14 +83,6 @@ export class ProductCarousel extends Component{
 
 }
 
-const custom_theme = {
-    width: "146vh"
-  }
-
-const theme = {
-    origin:"transform-origin: 30% 50%",
-    zScaling:"transform: translateZ(60px) scale(.8)"
-}
 
 const StyledCarouselContainer = styled.div`
     display:flex;

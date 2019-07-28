@@ -36,12 +36,12 @@ export class Nav extends Component{
     expandAndSticky(){
         let page_images = document.querySelectorAll(".product-carousel")
         let nav = document.querySelector(".main-nav")
-        let innerWindowSize = window.innerHeight
+        
         page_images.forEach(element => {
             let bounding_rect = element.getBoundingClientRect()
 
             let distanceFromTop = bounding_rect.top
-            let distanceFromBottom = bounding_rect.bottom
+            
             if (distanceFromTop <20){
                 element.classList.add("sticky-expand")
                 nav.classList.add("hidden-nav")
@@ -108,9 +108,9 @@ export class Nav extends Component{
                             <div className={`hidden-contact-info ${this.state.infoHidden && 'hidden'}`}>
                                 <div className="dropdown-arrow"></div>
                                 <div className="dropdown-menu">
-                                    <span className="dropdown-link"><a className="dropdown-icon" href="MAILTO:bailey.dust@gmail.com"><i class="fas fa-envelope"></i></a></span>
-                                    <span className="dropdown-link"><a className="dropdown-icon" href="https://github.com/dgbailey"><i class="fab fa-git-square"></i></a></span>
-                                    <span className="dropdown-link"><a className="dropdown-icon" href="https://www.linkedin.com/in/dustin-bailey-758ab195/"><i class="fab fa-linkedin"></i></a></span>
+                                    <span className="dropdown-link"><a className="dropdown-icon" rel="noopener noreferrer" target="_blank" href="MAILTO:bailey.dust@gmail.com"><i class="fas fa-envelope"></i></a></span>
+                                    <span className="dropdown-link"><a className="dropdown-icon"  rel="noopener noreferrer" target="_blank" href="https://github.com/dgbailey"><i class="fab fa-git-square"></i></a></span>
+                                    <span className="dropdown-link"><a className="dropdown-icon" rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/dustin-bailey-758ab195/"><i class="fab fa-linkedin"></i></a></span>
                                 </div>
                             </div>
                       
@@ -293,7 +293,7 @@ const StyledNavigation = styled.nav`
                 top:60px;
                 left: 3px;
                 transform: translateX(-73px);
-                box-shadow: 0px 9px 14px -6px rgba(0,0,0,0.11);
+                box-shadow: -1px 13px 15px -9px rgba(0, 0, 0, 0.28);
                 border-radius: 5px;
                 color: white;
                 border: 1px solid lightgray;
