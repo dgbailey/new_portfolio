@@ -30,7 +30,7 @@ const StyledCircle = styled.div`
 
     &.active{
         
-        background:gray;
+        background:#0080ffc9;
         transform:scale(1);
     }
 
