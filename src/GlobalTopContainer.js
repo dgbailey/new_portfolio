@@ -187,9 +187,10 @@ export class GlobalTopContainer extends Component{
                       
                     </div>
                 </div>
-            
-                <div  className="parallax__layer parallax__layer--a" id="project-quick-anchor">
+                
+                <div  className="parallax__layer parallax__layer--a" >
                     <div className="front-end-description-container">
+                        <a href="" className="project-quick-anchor" id="project-quick-anchor"></a>
                         <h1 className="front-end-project title">Professional &<br></br>personal projects.</h1>
                         
                     </div>
@@ -380,9 +381,9 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
 
     ${'' /* DUSTIN FLEXING THIS LAYER CAUSES BIG PROBS WITH PARALLAX IN SAFARI */}
     a{
-        color: #5b2dff;
+        color: #0080ffc9;
                 &:link{
-                    color: #5b2dff;
+                    color: #0080ffc9;
                    
                 }
 
@@ -531,6 +532,15 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     justify-content:center;
     flex-direction:column;
    
+   .project-quick-anchor{
+  
+        display: block;
+        position: relative;
+        top: -70px;
+        visibility: hidden;
+
+
+   }
 
     }
     .parallax__layer--b {
