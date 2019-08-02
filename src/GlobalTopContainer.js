@@ -245,6 +245,7 @@ export class GlobalTopContainer extends Component{
                         </div>
                     </div>
                 </div>
+                
                 <div className="parallax__layer parallax__layer--b">
                     <div className="front-end-description-container">
                 
@@ -300,8 +301,55 @@ export class GlobalTopContainer extends Component{
                         </div>
                     </div>
                 </div>
-                
                 <div className="parallax__layer parallax__layer--d">
+                    <div className="front-end-description-container">
+                    
+                        <div className="front-end-project text"> <strong className="strong-title"><em>The Void</em></strong><div className="big-overview-text"><strong>React & Redux</strong><br></br><strong> Django &</strong> <strong>PostgreSQL</strong><span className="elevator-line"><br></br><strong>Multi-User Dungeon</strong></span></div></div>
+                    
+                    </div>
+                    <div className="content-container full">
+                        
+                        <ProductCarousel imageArray={["void_s"]}/>
+                        <div className="under-carousel-description-cont">
+                            <p className="ucd-paragraph">The Void is a <a href="https://en.wikipedia.org/wiki/MUD">multi-user dungeon</a> (aka a multi-player game). My exclusive focus was learning, extending & deploying an inherited Django backend.<br></br><br></br> I collaborated with another backend engineer to create a flexible development pipeline facilitating local development on Django's native SQLite while deploying to PostgreSQL on Heroku.  I also enjoyed implementing a <a href="https://github.com/cs-build-week1-good-dev/mud-frontend/blob/master/src/components/main/ChatWindow.js">WebSocket based chat</a> on the frontend and backend.  The <a href="https://pusher.com/docs/channels">Pusher API</a> provided the backbone for our room specific channels.</p> 
+                            <div className="ucd-infographic">
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">5</h1></div>
+                                        <div className="ucd-icon-description">Team members. 4 Full stack dev. 1 Android</div>
+                                    </div>
+                                </div>
+                                <div className="icon-container">
+                                    <div className="icon-position-container">
+                                        <div className="ucd-icon"><h1 className="icon-number">4</h1></div>
+                                        <div className="ucd-icon-description"> Project days.</div>
+                                    </div>
+                                </div>
+                                
+                                    <div className="icon-container">
+                                        <a href="https://agitated-curran-1cd505.netlify.com/" rel="noopener noreferrer" target="_blank">
+                                            <div className="icon-position-container">
+                                                <div className="ucd-icon"><i class="fas fa-tv"></i></div>
+                                                <div className="ucd-icon-description islink">Visit Site.</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                               
+                            
+                                <div className="icon-container">
+                                    <a href="https://github.com/cs-build-week1-good-dev/" rel="noopener noreferrer" target="_blank">
+                                        <div className="icon-position-container">
+                                            <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                            <div className="ucd-icon-description islink">View Code.</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="parallax__layer parallax__layer--b">
                     <div className="front-end-description-container">
                     
                         <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong><div className="big-overview-text"><strong>React & Redux</strong><br></br><span className="elevator-line"><strong>Subscription management</strong></span></div></div>
