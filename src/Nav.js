@@ -320,13 +320,21 @@ const StyledNavigation = styled.nav`
                     padding: 15px 0px;
                 }
 
+                @media(max-width:570px){
+                       height:auto;
+                }
 
 
-                    
+                .dropdown-link{
+                    @media(max-width:570px){
+                        margin: 10px 0px;
+                        }
+                }
                 
                 .dropdown-icon{
                     
                     font-size:2.2rem;
+                    
 
                 }
 
@@ -336,6 +344,7 @@ const StyledNavigation = styled.nav`
                     ${'' /* &:hover{
                         transform:scale(1.01);
                     } */}
+                   
                 }
 
                 .fas.fa-envelope{
