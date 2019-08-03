@@ -108,9 +108,10 @@ export class Nav extends Component{
                             <div className={`hidden-contact-info ${this.state.infoHidden && 'hidden'}`}>
                                 <div className="dropdown-arrow"></div>
                                 <div className="dropdown-menu">
-                                    <span className="dropdown-link"><a className="dropdown-icon" rel="noopener noreferrer" target="_blank" href="MAILTO:bailey.dust@gmail.com"><i class="fas fa-envelope"></i></a></span>
+                                    <span className="dropdown-link"><a className="dropdown-icon"  href="MAILTO:bailey.dust@gmail.com"><i class="fas fa-envelope"></i></a></span>
                                     <span className="dropdown-link"><a className="dropdown-icon"  rel="noopener noreferrer" target="_blank" href="https://github.com/dgbailey"><i class="fab fa-git-square"></i></a></span>
                                     <span className="dropdown-link"><a className="dropdown-icon" rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/dustin-bailey-758ab195/"><i class="fab fa-linkedin"></i></a></span>
+                                    <span className="dropdown-link"><a className="dropdown-icon" rel="noopener noreferrer" target="_blank" href="https://twitter.com/dustbailz"><i class="fab fa-twitter-square"></i></a></span>
                                 </div>
                             </div>
                       
@@ -324,17 +325,17 @@ const StyledNavigation = styled.nav`
                     
                 
                 .dropdown-icon{
-                    padding:10px;
+                    
                     font-size:2.2rem;
 
                 }
 
                 i{
                     color:black;
-                    transition:.2s ease;
-                    &:hover{
-                        transform:scale(1.1);
-                    }
+                    transition:.1s linear;
+                    ${'' /* &:hover{
+                        transform:scale(1.01);
+                    } */}
                 }
 
                 .fas.fa-envelope{
@@ -363,6 +364,15 @@ const StyledNavigation = styled.nav`
                     animation:         fade-in-opacity-only-animation 1s both; /* IE 10+, Fx 29+ */
                     animation-delay:.3s;
                     color:#0077B5;
+                }
+
+                .fab.fa-twitter-square{
+                    -webkit-animation: fade-in-opacity-only-animation 1s both; /* Safari 4+ */
+                    -moz-animation:    fade-in-opacity-only-animation 1s both; /* Fx 5+ */
+                    -o-animation:      fade-in-opacity-only-animation 1s both; /* Opera 12+ */
+                    animation:         fade-in-opacity-only-animation 1s both; /* IE 10+, Fx 29+ */
+                    animation-delay:.4s;
+                    color:#1da1f2;
                 }
 
 

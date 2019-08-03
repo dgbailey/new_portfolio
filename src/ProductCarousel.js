@@ -114,13 +114,15 @@ const StyledProductCarousel = styled.div`
         scroll-snap-points-x: repeat(50%);
         scroll-snap-type: x mandatory;
         scroll-snap-align:center;
+        -ms-overflow-style: none; // IE 10+
+        scrollbar-width: none; // Firefox
 
-        &::-webkit-scrollbar{
-            width: 0px;
-            background: transparent;}
-        &{
-            scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none; // Safari and Chrome
         }
+
+
+        
     }
 
     
