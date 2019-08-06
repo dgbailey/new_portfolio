@@ -23,6 +23,7 @@ export class GlobalTopContainer extends Component{
             document.addEventListener('scroll', this.dropTextAndOpacity,true)
             document.addEventListener('scroll', this.titleTextAndOpacity,true)
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
+            document.addEventListener('scroll', this.showFooter,true)
         }
         else{
             
