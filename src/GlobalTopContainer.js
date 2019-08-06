@@ -32,6 +32,7 @@ export class GlobalTopContainer extends Component{
             document.addEventListener('scroll', this.titleTextAndOpacity,true)
             document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
+            document.addEventListener('scroll', this.showFooter,true)
            
            
         }
@@ -49,14 +50,27 @@ export class GlobalTopContainer extends Component{
             let contactInfo = document.querySelector(".hidden-contact-info")
             contactInfo.classList.add("hidden")
         
-        
-        
 
-        
-        
+    }
 
-       
-
+    showFooter(){
+    
+          
+            let globalSlideContainer_rect = document.querySelector(".begin-footer-marker").getBoundingClientRect()
+            let hidden_footer = document.querySelector(".contact-footer")
+            console.log()
+           
+            console.log("scrolling")
+            if (globalSlideContainer_rect.top <= window.innerHeight){
+               
+                console.log("winner")
+                hidden_footer.classList.remove("hidden-footer")
+            }
+            else{
+                
+                hidden_footer.classList.add("hidden-footer")
+            }
+        
     }
 
     dropTextAndOpacity = (e) => {
@@ -170,7 +184,7 @@ export class GlobalTopContainer extends Component{
     render(){
 
         return(
-            <StyledGlobalTopContainer onClick={this.hideContactPopup}>
+            <StyledGlobalTopContainer className="global-slide-container" onClick={this.hideContactPopup}>
                 {/* <Nav/> */}
                 <div className="parallax__layer parallax__layer--intro">
                     <div className="scroll-content-container">
@@ -394,7 +408,7 @@ export class GlobalTopContainer extends Component{
                         </div>
                     </div>
                 </div>
-            
+                <div className="begin-footer-marker"></div>
 
                     
                 
@@ -403,7 +417,7 @@ export class GlobalTopContainer extends Component{
             
                 
     
-            <Footer/>
+            
             </StyledGlobalTopContainer>
         )
 
@@ -420,6 +434,7 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     overflow-x: hidden;
     overflow-y: auto;
     white-space: nowrap;
+  
     
     
     perspective: 300px;
@@ -1048,6 +1063,12 @@ ${'' /*
         }
        
     
+    }
+
+    .begin-footer-marker{
+        height: 40px;
+        width: 100%;
+
     }
 
    
