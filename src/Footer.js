@@ -4,7 +4,7 @@ import {theme} from "./config";
 
 export const Footer = () => {
     return(
-        <StyledFooter>
+        <StyledFooter className="contact-footer hidden-footer">
          
             <a className="footer-contact-link" href="MAILTO:bailey.dust@gmail.com"><div className="footer-text">Dustin Bailey 2019 | Contact</div></a>
         </StyledFooter>
@@ -16,13 +16,20 @@ export const Footer = () => {
 const StyledFooter = styled.section`
 
     width:100%;
-    height: 70px;
+    height: 40px;
     display:flex;
     justify-content:center;
     align-items:center;
     -webkit-backface-visibility: hidden;
+    background:white;
+   
+    position:absolute;
+    z-index:1000;
+    bottom:0;
 
-
+    &.hidden-footer{
+       visibility:hidden;
+    }
 
     a{
         display: flex;
@@ -49,6 +56,7 @@ const StyledFooter = styled.section`
         }
     }
 
+    
     
 
 `

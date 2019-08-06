@@ -38,28 +38,24 @@ export class Nav extends Component{
         let nav = document.querySelector(".main-nav")
         
         page_images.forEach((element) => {
-            if(page_images.item(page_images.length -1) === element){
+            
+            let bounding_rect = element.getBoundingClientRect()
 
+            let distanceFromTop = bounding_rect.top
+            
+            if (distanceFromTop <20){
+                element.classList.add("sticky-expand")
+                nav.classList.add("hidden-nav")
             }
 
+            
             else{
-                let bounding_rect = element.getBoundingClientRect()
-
-                let distanceFromTop = bounding_rect.top
-                
-                if (distanceFromTop <20){
-                    element.classList.add("sticky-expand")
-                    nav.classList.add("hidden-nav")
-                }
-
-                
-                else{
-                    if(element.classList.contains("sticky-expand")){
-                        element.classList.remove("sticky-expand")
-                        nav.classList.remove("hidden-nav")
-                    }
+                if(element.classList.contains("sticky-expand")){
+                    element.classList.remove("sticky-expand")
+                    nav.classList.remove("hidden-nav")
                 }
             }
+            
             
 
         })
