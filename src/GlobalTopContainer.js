@@ -433,7 +433,7 @@ const StyledGlobalTopContainer = styled.section`
 ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing */}
 
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     white-space: nowrap;
   
     
