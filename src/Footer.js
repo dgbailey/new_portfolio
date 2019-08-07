@@ -23,7 +23,7 @@ const StyledFooter = styled.section`
     -webkit-backface-visibility: hidden;
     background:white;
    
-    position:absolute;
+   
     z-index:1000;
     perspective:300px;
     bottom:0;
