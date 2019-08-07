@@ -418,7 +418,7 @@ export class GlobalTopContainer extends Component{
             
                 
     
-            
+                <Footer/>
             </StyledGlobalTopContainer>
         )
 
@@ -1049,7 +1049,7 @@ ${'' /*
         top: 0;
         transform: scale(1.23,1.28);
         ${'' /* margin-top:38px; */}
-        
+        -webkit-perspective: 1000;
         
         z-index:1000;
         

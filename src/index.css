@@ -12,17 +12,17 @@ body {
   transform: translateZ(0px);
   
 }
-@media(max-width:590px){
+/* @media(max-width:590px){
   body{
-   overflow: hidden;
+   overflow-y: scroll;
   }
-}
+} */
 
-@media(max-width:590px){
+/* @media(max-width:590px){
   html{
    overflow: hidden;
   }
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
