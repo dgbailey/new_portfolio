@@ -27,6 +27,10 @@ const StyledFooter = styled.section`
     z-index:1000;
     perspective:300px;
     bottom:0;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     @media(max-width:590px){
             
