@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Nav/>
       <GlobalTopContainer/>
-      <Footer/>
+      
     </div>
   );
 }

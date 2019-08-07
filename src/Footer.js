@@ -25,7 +25,14 @@ const StyledFooter = styled.section`
    
     position:absolute;
     z-index:1000;
+    perspective:300px;
     bottom:0;
+
+    @media(max-width:590px){
+            
+            position:relative;
+            height:100vh;
+        }
 
     &.hidden-footer{
        visibility:hidden;
@@ -53,6 +60,7 @@ const StyledFooter = styled.section`
 
         @media(max-width:590px){
             font-size: 1.5rem;
+           
         }
     }
 
