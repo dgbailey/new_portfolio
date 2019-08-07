@@ -436,6 +436,9 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     overflow-y: scroll;
     white-space: nowrap;
   
+   
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
     
     
     perspective: 300px;
@@ -462,6 +465,8 @@ ${'' /* https://developers.google.com/web/updates/2016/12/performant-parallaxing
     width: 100%;
     vertical-align: middle;
     white-space: normal;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
     .front-end-description-container{
         display:flex;
         flex-direction:column;
