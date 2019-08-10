@@ -319,7 +319,7 @@ export class GlobalTopContainer extends Component{
                 <div className="parallax__layer parallax__layer--d">
                     <div className="front-end-description-container">
                     
-                        <div className="front-end-project text"> <strong className="strong-title"><em>The Void</em></strong><div className="big-overview-text"><strong>React & Redux</strong><br></br><strong> Django &</strong> <strong>PostgreSQL</strong><span className="elevator-line"><br></br><strong>Multi-User Dungeon</strong></span></div></div>
+                        <div className="front-end-project text"> <strong className="strong-title"><em>The Void</em></strong><div className="big-overview-text"><strong>React & Redux</strong><br></br><strong> Django &</strong> <strong>PostgreSQL</strong><span className="elevator-line">
                     
                     </div>
                     <div className="content-container full">
