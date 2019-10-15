@@ -221,7 +221,7 @@ export class GlobalTopContainer extends Component{
                         <ProductCarousel className="product-carousel" imageArray={["tieme_mark_s","tieme_home_s","tieme_click_s"]}/>
                         <div className="under-carousel-description-cont">
                         <p className="ucd-paragraph">The Tieme Ndo CRM was developed for an <a href="http://tiemendo.com/cord" rel="noopener noreferrer" target="_blank">organization</a> that supports the operational needs of rural Ghanaian farmers with little to no upfront cost. 
-                            Project scope was the largest concern for the team ultimately resulting in the prioritization of code extensibility over a full feature set. <br></br><br></br>I was involved in every part of the technical stack for this project skewing toward front end. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
+                            Project scope was the largest concern for the team ultimately resulting in the prioritization of code extensibility over a full feature set. <br></br><br></br>I was involved in every part of the technical stack for this project skewing toward front end & design. Peek at one implementation of pageable resources on the <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientResultsBtn.js">front end</a> & <a href="https://github.com/labs13-agriculture/Tiemendo-Back-End/commit/75cec8a5039a74f2b85bea24a817781e860c6719#diff-1be246628e927478032aee8ec0432917">back end</a>. Or <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ClientView/ClientCard.js">check out</a> how a react-strap modal was extended into a spacially aware drop down for a better search result experience. Still reading? <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/SearchUsers.js">Search as you type</a> and <a href="https://github.com/labs13-agriculture/front-end/blob/master/src/components/ManageUsers/UserDetails.js">pre-populated</a> forms were two other fun features.</p>
                             <div className="ucd-infographic">
                                 <div className="icon-container">
                                     <div className="icon-position-container">
@@ -400,10 +400,13 @@ export class GlobalTopContainer extends Component{
                                
                             
                                 <div className="icon-container">
-                                    <div className="icon-position-container">
-                                        <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
-                                        <div className="ucd-icon-description islink">View Code.</div>
-                                    </div>
+                                    <a href="https://github.com/dgbailey/talweg_be" rel="noopener noreferrer" target="_blank">
+                                    
+                                        <div className="icon-position-container">
+                                            <div className="ucd-icon"><i class="fab fa-git-square"></i></div>
+                                            <div className="ucd-icon-description islink">View Code.</div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
