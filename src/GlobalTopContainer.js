@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {theme} from "./config";
 import {ProductCarousel} from "./ProductCarousel";
 import {Footer} from "./Footer";
-
+import { debounce } from "underscore";
 
 export class GlobalTopContainer extends Component{
 
@@ -27,13 +27,17 @@ export class GlobalTopContainer extends Component{
         }
         else{
             
-        
-        
-            document.addEventListener('scroll', this.dropTextAndOpacity,true)
-            document.addEventListener('scroll', this.titleTextAndOpacity,true)
-            document.addEventListener('scroll', this.iconDescTextAndOpacity,true)
+            document.addEventListener('scroll', this.dropTextAndOpacity,true);
+            document.addEventListener('scroll', this.titleTextAndOpacity,true);
+            document.addEventListener('scroll', this.iconDescTextAndOpacity,true);
             document.addEventListener('scroll', this.uCdTextAndOpacity,true)
             document.addEventListener('scroll', this.showFooter,true)
+        
+            // document.addEventListener('scroll', debounce(this.dropTextAndOpacity,true),2000,true);
+            // document.addEventListener('scroll', debounce(this.titleTextAndOpacity,true),2000,true);
+            // document.addEventListener('scroll', debounce(this.iconDescTextAndOpacity,true),2000,true);
+            // document.addEventListener('scroll', debounce(this.uCdTextAndOpacity,true),2000,true)
+            // document.addEventListener('scroll', debounce(this.showFooter,true),2000,true);
            
            
         }
@@ -54,7 +58,7 @@ export class GlobalTopContainer extends Component{
 
     }
 
-    showFooter(){
+    showFooter = debounce(() =>{
     
           
             let globalSlideContainer_rect = document.querySelector(".begin-footer-marker").getBoundingClientRect()
@@ -72,9 +76,9 @@ export class GlobalTopContainer extends Component{
                 hidden_footer.classList.add("hidden-footer")
             }
         
-    }
+    },5,true);
 
-    dropTextAndOpacity = (e) => {
+    dropTextAndOpacity = debounce((e) => {
         
         let elementList = document.querySelectorAll(".big-overview-text")
         elementList.forEach( element => {
@@ -91,18 +95,18 @@ export class GlobalTopContainer extends Component{
 
         })
       
-        
+        console.log('scrolling');
         
       // do something at end of scroll
         
             
     
         
-    }
+    },5,true);
 
     
 
-    titleTextAndOpacity = (e) => {
+    titleTextAndOpacity = debounce((e) => {
         
         let elementList = document.querySelectorAll(".strong-title")
         elementList.forEach( element => {
@@ -120,9 +124,9 @@ export class GlobalTopContainer extends Component{
         })
 
         // console.log(y,innerWindowSize
-    }
+    },5,true);
 
-    iconDescTextAndOpacity = (e) => {
+    iconDescTextAndOpacity = debounce((e) => {
         let subElementList = document.querySelectorAll(".ucd-icon-description")
         let elementList = document.querySelectorAll(".icon-position-container")
         elementList.forEach( element => {
@@ -156,9 +160,9 @@ export class GlobalTopContainer extends Component{
 
         
         // console.log(y,innerWindowSize
-    }
+    },5,true);
 
-    uCdTextAndOpacity = (e) => {
+    uCdTextAndOpacity = debounce((e) => {
         
         let elementList = document.querySelectorAll(".ucd-paragraph")
         elementList.forEach( element => {
@@ -178,7 +182,7 @@ export class GlobalTopContainer extends Component{
 
         
         // console.log(y,innerWindowSize
-    }
+    },5,true);
 
     
 
@@ -743,7 +747,7 @@ ${'' /*
         margin: 20px 0px 20px;
 
         text-align: center;
-        -webkit-animation: fade-in-animation 1s both; /* Safari 4+ */
+        -webkit-animation: fade-in-animation .5s both; /* Safari 4+ */
         -moz-animation:    fade-in-animation 1s both; /* Fx 5+ */
         -o-animation:      fade-in-animation 1s both; /* Opera 12+ */
         animation:         fade-in-animation 1s both; /* IE 10+, Fx 29+ */
@@ -790,7 +794,7 @@ ${'' /*
         
         font-size:2.5rem;
         ${theme.globalTextFont};
-        -webkit-animation: fade-in-animation 1.3s both; /* Safari 4+ */
+        -webkit-animation: fade-in-animation .5s both; /* Safari 4+ */
         -moz-animation:fade-in-animation 1.3s both; /* Fx 5+ */
         -o-animation:fade-in-animation 1.3s both; /* Opera 12+ */
         animation:fade-in-animation 1.3s both; /* IE 10+, Fx 29+ */
@@ -1088,45 +1092,45 @@ ${'' /*
     }
 
     .fade-in{
-    -webkit-animation: fade-in-animation 2s ease; /* Safari 4+ */
-    -moz-animation:    fade-in-animation 2s ease; /* Fx 5+ */
-    -o-animation:      fade-in-animation 2s ease; /* Opera 12+ */
-    animation:         fade-in-animation 2s ease; /* IE 10+, Fx 29+ */
+    -webkit-animation: fade-in-animation .5s both; /* Safari 4+ */
+    -moz-animation:    fade-in-animation 2s both; /* Fx 5+ */
+    -o-animation:      fade-in-animation 2s both; /* Opera 12+ */
+    animation:         fade-in-animation 2s both; /* IE 10+, Fx 29+ */
     }
 
     .fade-in-opacity-only{
-    -webkit-animation: fade-in-opacity-only-animation 2s ease; /* Safari 4+ */
-    -moz-animation:    fade-in-opacity-only-animation 2s ease; /* Fx 5+ */
-    -o-animation:      fade-in-opacity-only-animation 2s ease; /* Opera 12+ */
-    animation:         fade-in-opacity-only-animation 2s ease; /* IE 10+, Fx 29+ */
+    -webkit-animation: fade-in-opacity-only-animation .5s both; /* Safari 4+ */
+    -moz-animation:    fade-in-opacity-only-animation 2s both; /* Fx 5+ */
+    -o-animation:      fade-in-opacity-only-animation 2s both; /* Opera 12+ */
+    animation:         fade-in-opacity-only-animation 2s both; /* IE 10+, Fx 29+ */
     }
 
     .fade-in-icon{
-    -webkit-animation: fade-in-icon 1.1s ease; /* Safari 4+ */
-    -moz-animation:    fade-in-icon 1.1s ease; /* Fx 5+ */
-    -o-animation:      fade-in-icon 1.1s ease; /* Opera 12+ */
-    animation:         fade-in-icon 1.1s ease; /* IE 10+, Fx 29+ */
+    -webkit-animation: fade-in-icon .5s both; /* Safari 4+ */
+    -moz-animation:    fade-in-icon 1.1s both; /* Fx 5+ */
+    -o-animation:      fade-in-icon 1.1s both; /* Opera 12+ */
+    animation:         fade-in-icon 1.1s both; /* IE 10+, Fx 29+ */
     }
 
     .fade-up{
-    -webkit-animation: fade-up-animation 1.1s ease; /* Safari 4+ */
-    -moz-animation:    fade-up-animation 1.1s ease; /* Fx 5+ */
-    -o-animation:      fade-up-animation 1.1s ease; /* Opera 12+ */
-    animation:         fade-up-animation 1.1s ease; /* IE 10+, Fx 29+ */
+    -webkit-animation: fade-up-animation .5s both; /* Safari 4+ */
+    -moz-animation:    fade-up-animation 1.1s both; /* Fx 5+ */
+    -o-animation:      fade-up-animation 1.1s both; /* Opera 12+ */
+    animation:         fade-up-animation 1.1s both; /* IE 10+, Fx 29+ */
     }
 
     .fade-up-delay{
-    -webkit-animation: fade-up-animation 1.4s ease; /* Safari 4+ */
-    -moz-animation:    fade-up-animation 1.4s ease; /* Fx 5+ */
-    -o-animation:      fade-up-animation 1.4s ease; /* Opera 12+ */
-    animation:         fade-up-animation 1.4s ease; /* IE 10+, Fx 29+ */
+    -webkit-animation: fade-up-animation .5s both; /* Safari 4+ */
+    -moz-animation:    fade-up-animation 1.4s both; /* Fx 5+ */
+    -o-animation:      fade-up-animation 1.4s both; /* Opera 12+ */
+    animation:         fade-up-animation 1.4s both; /* IE 10+, Fx 29+ */
     }
 
     .transform-animation{
-    -webkit-animation: fade-up-animation 1.4s ease; /* Safari 4+ */
-    -moz-animation:    fade-up-animation 1.4s ease; /* Fx 5+ */
-    -o-animation:      fade-up-animation 1.4s ease; /* Opera 12+ */
-    animation:         fade-up-animation 1.4s ease; /* IE 10+, Fx 29+ */
+    -webkit-animation: fade-up-animation .5s both; /* Safari 4+ */
+    -moz-animation:    fade-up-animation 1.4s both; /* Fx 5+ */
+    -o-animation:      fade-up-animation 1.4s both; /* Opera 12+ */
+    animation:         fade-up-animation 1.4s both; /* IE 10+, Fx 29+ */
     }
 
     @-webkit-keyframes fade-in-animation {
@@ -1192,28 +1196,28 @@ ${'' /*
     ${'' /* fade in icon */}
     @-webkit-keyframes fade-in-icon {
     0%   { opacity: 0; 
-            transform:translateY(10px)}
+            transform:translateY(5px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-moz-keyframes fade-in-icon {
         0%   { opacity: 0; 
-            transform:translateY(10px)}
+            transform:translateY(5px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-o-keyframes fade-in-icon {
         0%   { opacity: 0; 
-            transform:translateY(10px)}
+            transform:translateY(5px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @keyframes fade-in-icon {
         0%   { opacity: 0; 
-            transform:translateY(10px)}
+            transform:translateY(5px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
@@ -1223,28 +1227,28 @@ ${'' /*
     ${'' /* fadeup */}
     @-webkit-keyframes fade-up-animation {
     0%   { opacity: 0; 
-            transform:translateY(80px)}
+            transform:translateY(40px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-moz-keyframes fade-up-animation {
         0%   { opacity: 0; 
-            transform:translateY(80px)}
+            transform:translateY(40px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-o-keyframes fade-up-animation {
         0%   { opacity: 0; 
-            transform:translateY(80px)}
+            transform:translateY(40px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @keyframes fade-up-animation {
         0%   { opacity: 0; 
-            transform:translateY(80px)}
+            transform:translateY(40px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
@@ -1253,28 +1257,28 @@ ${'' /*
     ${'' /* fadeup-delay */}
     @-webkit-keyframes fade-up-delay-animation {
     0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-moz-keyframes fade-up-delay-animation {
         0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @-o-keyframes fade-up-delay-animation {
         0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
     }
     @keyframes fade-up-delay-animation {
         0%   { opacity: 0; 
-            transform:translateY(50px)}
+            transform:translateY(20px)}
             
     100% { opacity: 1; 
         transform:translateY(0px)}
