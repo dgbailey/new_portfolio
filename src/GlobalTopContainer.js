@@ -371,7 +371,7 @@ export class GlobalTopContainer extends Component{
                 <div className="parallax__layer parallax__layer--b">
                     <div className="front-end-description-container">
                     
-                        <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong><div className="big-overview-text"><strong>React & Redux</strong><br></br><span className="elevator-line"><strong>Subscription management</strong></span></div></div>
+                        <div className="front-end-project text"> <strong className="strong-title"><em>Talweg</em></strong><div className="big-overview-text"><strong>React & Express</strong><br></br><span className="elevator-line"><strong>Subscription management</strong></span></div></div>
                     
                     </div>
                     <div className="content-container full">
