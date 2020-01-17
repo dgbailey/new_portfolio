@@ -6,7 +6,7 @@ export const Footer = () => {
     return(
         <StyledFooter className="contact-footer hidden-footer">
          
-            <a className="footer-contact-link" href="MAILTO:bailey.dust@gmail.com"><div className="footer-text">Dustin Bailey 2019 | Contact</div></a>
+            <a className="footer-contact-link" href="MAILTO:bailey.dust@gmail.com"><div className="footer-text">Dustin Bailey 2020 | Contact</div></a>
         </StyledFooter>
     )
 
